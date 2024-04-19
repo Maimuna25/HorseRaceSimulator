@@ -1,18 +1,22 @@
-public static void main(String[] args) {
-    Horse myHorse = new Horse('H', "Thunder", 0.8);
+package Part1;
 
-    System.out.println("Horses name: " + myHorse.getName());
-    System.out.println("Symbol: " + myHorse.getSymbol());
-    System.out.println("Confidence Level: " + myHorse.getConfidence());
-    System.out.println("Distance Travelled: " + myHorse.getDistanceTravelled());
-    System.out.println();
+public class Main {
+    public static void main(String[] args) {
+        Horse myHorse = new Horse('H', "Thunder", 0.8);
 
-    myHorse.moveForward();
-    System.out.println("New distance: " + myHorse.getDistanceTravelled());
+        System.out.println("Horses name: " + myHorse.getName());
+        System.out.println("Symbol: " + myHorse.getSymbol());
+        System.out.println("Confidence Level: " + myHorse.getConfidence());
+        System.out.println("Distance Travelled: " + myHorse.getDistanceTravelled());
+        System.out.println();
 
-    myHorse.setConfidence(0.9);
-    System.out.println("Updated Confidence level: " + myHorse.getConfidence());
+        myHorse.moveForward();
+        System.out.println("New distance: " + myHorse.getDistanceTravelled());
 
-    myHorse.setSymbol('T');
-    System.out.println("New symbol: " + myHorse.getSymbol());
+        myHorse.setConfidence(0.9);
+        System.out.println("Updated Confidence level: " + myHorse.getConfidence());
+
+        myHorse.setSymbol('T');
+        System.out.println("New symbol: " + myHorse.getSymbol());
+    }
 }
