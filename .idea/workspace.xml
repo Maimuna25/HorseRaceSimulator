@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/HorseRaceSimulator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part1/Horse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part1/Race.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part1/RaceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/Controller/HorseSettingsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/Controller/MainFrameController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/Controller/TrackSettingsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/Model/Horse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/Model/Track.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/RaceTrackApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/View/HorseSettingsFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/View/ImagePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/View/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/View/TrackSettingsFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/assets/horseIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/assets/raceTrack.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/data/Constants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/utilities/IntRange.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
