@@ -5,6 +5,7 @@ import Part2.data.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
     private JPanel topPanel;
@@ -109,5 +110,25 @@ public class MainFrame extends JFrame {
         bottomPanel.add(bettingButton);
 
         return bottomPanel;
+    }
+
+    public void onCustomiseTrackButtonClicked(ActionListener actionListener) {
+        customiseTrackButton.addActionListener(actionListener);
+    }
+
+    public void onCustomiseHorsesButtonClicked(ActionListener actionListener) {
+        customiseHorsesButton.addActionListener(actionListener);
+    }
+
+    public void onStartRaceButtonClicked(ActionListener actionListener) {
+        startRaceButton.addActionListener(actionListener);
+    }
+
+    public void onStatsButtonClicked(ActionListener actionListener) {
+        statsButton.addActionListener(actionListener);
+    }
+
+    public void onBettingButtonClicked(ActionListener actionListener) {
+        bettingButton.addActionListener(actionListener);
     }
 }
