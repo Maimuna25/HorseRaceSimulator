@@ -11,6 +11,7 @@ import java.util.List;
 public class MainFrameController {
     private MainFrame mainFrame;
     private TrackSettingsController trackSettingsController;
+    private HorseSettingsController horseSettingsController;
     private Track trackSettings;
     private List<Horse> horses;
 
@@ -20,7 +21,13 @@ public class MainFrameController {
         setUpDefaultSettings();
 
         this.trackSettingsController = new TrackSettingsController(this);
+        this.horseSettingsController = new HorseSettingsController(this);
+
         this.mainFrame.onCustomiseTrackButtonClicked(_ -> trackSettingsController.toggleFrameVisible(true));
+        this.mainFrame.onCustomiseHorsesButtonClicked(_ -> {
+            this.horseSettingsController = new HorseSettingsController(this);
+            horseSettingsController.toggleFrameVisible(true);
+        });
 
     }
 
@@ -48,5 +55,13 @@ public class MainFrameController {
 
     public Track getTrackSettings() {
         return trackSettings;
+    }
+
+    public void setHorses(List<Horse> horses) {
+        this.horses = horses;
+    }
+
+    public List<Horse> getHorses() {
+        return horses;
     }
 }
