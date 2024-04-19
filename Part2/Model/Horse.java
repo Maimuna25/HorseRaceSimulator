@@ -4,53 +4,65 @@ import Part2.data.Constants;
 
 public class Horse {
     private String horseName;
-    private String breed;
     private String coatColour;
-    private String equipment;
-    private String accessory;
+    private String hairColour;
+    private String saddleColour;
+    private String bridleColour;
 
-    public Horse(String horseName, String breed, String coatColour, String equipment, String accessory) {
+    public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour) {
         this.horseName = horseName;
-        this.breed = breed;
         this.coatColour = coatColour;
-        this.equipment = equipment;
-        this.accessory = accessory;
+        this.hairColour = hairColour;
+        this.saddleColour = saddleColour;
+        this.bridleColour = bridleColour;
     }
 
-    public Horse(String horseName, String breed, String coatColour) {
-        this(horseName, breed, coatColour, Constants.EQUIPMENT_OPTIONS[0], Constants.ACCESSORIES_OPTIONS[0]);
+    public Horse(String horseName, String coatColour, String hairColour) {
+        this(horseName, coatColour, hairColour, Constants.SADDLE_COLOUR[0], Constants.BRIDLE_COLOUR[0]);
     }
 
     public String getHorseName() {
         return horseName;
     }
 
-    public String getBreed() {
-        return breed;
+    public void setHorseName(String horseName) {
+        this.horseName = horseName;
     }
 
     public String getCoatColour() {
         return coatColour;
     }
 
-    public String getEquipment() {
-        return equipment;
+    public void setCoatColour(String coatColour) {
+        this.coatColour = coatColour;
     }
 
-    public void setEquipment(String equipment) {
-        this.equipment = equipment;
+    public String getHairColour() {
+        return hairColour;
     }
 
-    public String getAccessory() {
-        return accessory;
+    public void setHairColour(String hairColour) {
+        this.hairColour = hairColour;
     }
 
-    public void setAccessory(String accessory) {
-        this.accessory = accessory;
+    public String getSaddleColour() {
+        return saddleColour;
+    }
+
+    public void setSaddleColour(String saddleColour) {
+        this.saddleColour = saddleColour;
+    }
+
+    public String getBridleColour() {
+        return bridleColour;
+    }
+
+    public void setBridleColour(String bridleColour) {
+        this.bridleColour = bridleColour;
     }
 
     @Override
     public String toString() {
-        return STR."Horse - \{horseName}. Breed: \{breed}, Coat Colour: \{coatColour}, Equipment: \{equipment}, Accessories: \{accessory}";
+        return STR."Horse - \{horseName}, Coat Colour: \{coatColour}, Hair Colour: \{hairColour}, Saddle Colour: \{saddleColour}, Bridle Colour: \{bridleColour}";
     }
 }

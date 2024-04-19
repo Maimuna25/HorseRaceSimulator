@@ -54,7 +54,7 @@ public class MainFrameController {
     private void setUpDefaultSettings() {
         this.trackSettings = new Track(1, 500);
         this.horses = new ArrayList<>();
-        horses.add(new Horse("Horse 0", Constants.BREEDS[0], Constants.COAT_COLORS[0]));
+        horses.add(new Horse("Horse 0", Constants.COAT_COLORS[0], Constants.HAIR_COLOURS[0]));
     }
 
     public void setTrackSettings(Track trackSettings) {
@@ -64,7 +64,7 @@ public class MainFrameController {
         int diff = trackSettings.getNumLanes() - horses.size();
         if (diff > 0) {
             for (int i = horses.size(); i < trackSettings.getNumLanes(); i++) {
-                horses.add(new Horse("Horse" + i, Constants.BREEDS[0], Constants.COAT_COLORS[0]));
+                horses.add(new Horse("Horse" + i, Constants.COAT_COLORS[0], Constants.HAIR_COLOURS[0]));
             }
         } else if (diff < 0) {
             while (horses.size() > trackSettings.getNumLanes()) {

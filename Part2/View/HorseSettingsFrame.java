@@ -14,10 +14,10 @@ public class HorseSettingsFrame extends JFrame {
 
     private int numLanes;
     private List<JTextField> horseNameFields;
-    private List<JComboBox<String>> breedComboBoxes;
-    private List<JComboBox<String>> coatColorComboBoxes;
-    private List<JComboBox<String>> equipmentComboBoxes;
-    private List<JComboBox<String>> accessoriesComboBoxes;
+    private List<JComboBox<String>> coatColourComboBoxes;
+    private List<JComboBox<String>> hairColourComboBoxes;
+    private List<JComboBox<String>> saddleColourComboBoxes;
+    private List<JComboBox<String>> bridleColourComboBoxes;
     private JButton customiseButton;
 
 
@@ -31,10 +31,10 @@ public class HorseSettingsFrame extends JFrame {
         getContentPane().setBackground(Constants.LIGHT_BLUE);
 
         this.horseNameFields = new ArrayList<>();
-        this.breedComboBoxes = new ArrayList<>();
-        this.coatColorComboBoxes = new ArrayList<>();
-        this.equipmentComboBoxes = new ArrayList<>();
-        this.accessoriesComboBoxes = new ArrayList<>();
+        this.coatColourComboBoxes = new ArrayList<>();
+        this.hairColourComboBoxes = new ArrayList<>();
+        this.saddleColourComboBoxes = new ArrayList<>();
+        this.bridleColourComboBoxes = new ArrayList<>();
 
         // space between pairs of columns
         Insets columnPairInset = new Insets(0, 0, 10, 20);
@@ -73,61 +73,61 @@ public class HorseSettingsFrame extends JFrame {
             add(horseNameField, gridBagConstraints);
             horseNameFields.add(horseNameField);
 
-            JLabel breedLabel = new JLabel("Breed: ");
-            gridBagConstraints.gridx = 2 * col;
-            gridBagConstraints.gridy = 2;
-            gridBagConstraints.insets = labelInset;
-            add(breedLabel, gridBagConstraints);
-
-            JComboBox<String> breedComboBox = new JComboBox<>(Constants.BREEDS);
-            breedComboBox.setSelectedItem(horse.getBreed());
-            gridBagConstraints.gridx = 2 * col + 1;
-            gridBagConstraints.gridy = 2;
-            gridBagConstraints.insets = columnPairInset;
-            add(breedComboBox, gridBagConstraints);
-            breedComboBoxes.add(breedComboBox);
-
             JLabel coatColourLabel = new JLabel("Coat Colour: ");
             gridBagConstraints.gridx = 2 * col;
-            gridBagConstraints.gridy = 3;
+            gridBagConstraints.gridy = 2;
             gridBagConstraints.insets = labelInset;
             add(coatColourLabel, gridBagConstraints);
 
             JComboBox<String> coatColourComboBox = new JComboBox<>(Constants.COAT_COLORS);
             coatColourComboBox.setSelectedItem(horse.getCoatColour());
             gridBagConstraints.gridx = 2 * col + 1;
-            gridBagConstraints.gridy = 3;
+            gridBagConstraints.gridy = 2;
             gridBagConstraints.insets = columnPairInset;
             add(coatColourComboBox, gridBagConstraints);
-            coatColorComboBoxes.add(coatColourComboBox);
+            coatColourComboBoxes.add(coatColourComboBox);
 
-            JLabel equipmentLabel = new JLabel("Equipment: ");
+            JLabel hairColourLabel = new JLabel("Hair Colour: ");
+            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridy = 3;
+            gridBagConstraints.insets = labelInset;
+            add(hairColourLabel, gridBagConstraints);
+
+            JComboBox<String> hairColourComboBox = new JComboBox<>(Constants.HAIR_COLOURS);
+            hairColourComboBox.setSelectedItem(horse.getCoatColour());
+            gridBagConstraints.gridx = 2 * col + 1;
+            gridBagConstraints.gridy = 3;
+            gridBagConstraints.insets = columnPairInset;
+            add(hairColourComboBox, gridBagConstraints);
+            hairColourComboBoxes.add(hairColourComboBox);
+
+            JLabel saddleColourLabel = new JLabel("Saddle Colour: ");
             gridBagConstraints.gridx = 2 * col;
             gridBagConstraints.gridy = 4;
             gridBagConstraints.insets = labelInset;
-            add(equipmentLabel, gridBagConstraints);
+            add(saddleColourLabel, gridBagConstraints);
 
-            JComboBox<String> equipmentComboBox = new JComboBox<>(Constants.EQUIPMENT_OPTIONS);
-            equipmentComboBox.setSelectedItem(horse.getEquipment());
+            JComboBox<String> saddleColourComboBox = new JComboBox<>(Constants.SADDLE_COLOUR);
+            saddleColourComboBox.setSelectedItem(horse.getSaddleColour());
             gridBagConstraints.gridx = 2 * col + 1;
             gridBagConstraints.gridy = 4;
             gridBagConstraints.insets = columnPairInset;
-            add(equipmentComboBox, gridBagConstraints);
-            equipmentComboBoxes.add(equipmentComboBox);
+            add(saddleColourComboBox, gridBagConstraints);
+            saddleColourComboBoxes.add(saddleColourComboBox);
 
-            JLabel accessoriesLabel = new JLabel("Accessories: ");
+            JLabel bridleColourLabel = new JLabel("Bridle Colour: ");
             gridBagConstraints.gridx = 2 * col;
             gridBagConstraints.gridy = 5;
             gridBagConstraints.insets = labelInset;
-            add(accessoriesLabel, gridBagConstraints);
+            add(bridleColourLabel, gridBagConstraints);
 
-            JComboBox<String> accessoriesComboBox = new JComboBox<>(Constants.ACCESSORIES_OPTIONS);
-            accessoriesComboBox.setSelectedItem(horse.getAccessory());
+            JComboBox<String> bridleColourComboBox = new JComboBox<>(Constants.BRIDLE_COLOUR);
+            bridleColourComboBox.setSelectedItem(horse.getBridleColour());
             gridBagConstraints.gridx = 2 * col + 1;
             gridBagConstraints.gridy = 5;
             gridBagConstraints.insets = columnPairInset;
-            add(accessoriesComboBox, gridBagConstraints);
-            accessoriesComboBoxes.add(accessoriesComboBox);
+            add(bridleColourComboBox, gridBagConstraints);
+            bridleColourComboBoxes.add(bridleColourComboBox);
         }
 
         customiseButton = new JButton("Apply Changes");
@@ -141,35 +141,37 @@ public class HorseSettingsFrame extends JFrame {
         customiseButton.addActionListener(actionListener);
     }
 
-    public int getNumLanes() {
-        return numLanes;
-    }
-
     public String getHorseName(int laneNum) {
         return horseNameFields.get(laneNum).getText();
     }
 
-    public String getBreed(int laneNum) {
-        return (String) breedComboBoxes.get(laneNum).getSelectedItem();
-    }
-
     public String getCoatColour(int laneNum) {
-        return (String) coatColorComboBoxes.get(laneNum).getSelectedItem();
+        return (String) coatColourComboBoxes.get(laneNum).getSelectedItem();
     }
 
-    public String getEquipment(int laneNum) {
-        return (String) equipmentComboBoxes.get(laneNum).getSelectedItem();
+    public String getHairColour(int laneNum) {
+        return (String) hairColourComboBoxes.get(laneNum).getSelectedItem();
     }
 
-    public String getAccessories(int laneNum) {
-        return (String) accessoriesComboBoxes.get(laneNum).getSelectedItem();
+    public String getSaddleColour(int laneNum) {
+        return (String) saddleColourComboBoxes.get(laneNum).getSelectedItem();
+    }
+
+    public String getBridleColour(int laneNum) {
+        return (String) bridleColourComboBoxes.get(laneNum).getSelectedItem();
     }
 
     public List<Horse> getHorses() {
         List<Horse> newRunningHorses = new ArrayList<>();
 
         for (int i = 0; i < numLanes; i++) {
-            newRunningHorses.add(new Horse(getHorseName(i), getBreed(i), getCoatColour(i), getEquipment(i), getAccessories(i)));
+            newRunningHorses.add(new Horse(
+                    getHorseName(i),
+                    getCoatColour(i),
+                    getHairColour(i),
+                    getSaddleColour(i),
+                    getBridleColour(i)
+            ));
         }
 
         return newRunningHorses;
