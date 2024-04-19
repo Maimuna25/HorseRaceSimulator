@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Part2/Controller/MainFrameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/Model/Horse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/Model/Track.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part2/View/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/data/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/data/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/View/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HorseRaceSimulator/Part2/View/MainFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,15 @@
     "last_opened_file_path": "C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jawad\Documents\MaimunaGitHub\HorseRaceSimulator\Part2\assets" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Part2.Model" />
+      <recent name="Part2.View" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.RaceTrackApp">
     <configuration name="RaceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Part1.RaceTest" />

@@ -1,5 +1,6 @@
 package Part2.View;
 
+import Part2.Controller.MainFrameController;
 import Part2.data.Constants;
 
 import javax.swing.*;
@@ -36,6 +37,8 @@ public class MainFrame extends JFrame {
         // Bottom panel with action buttons
         bottomPanel = createBottomPanel();
         add(bottomPanel, BorderLayout.SOUTH);
+
+        new MainFrameController(this);
 
         setVisible(true);
     }
