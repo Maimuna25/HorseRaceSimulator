@@ -1,7 +1,14 @@
 package Part2.Model;
 
+import Part2.View.ImagePanel;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Objects;
 
 public class HorsePanel extends JPanel implements Runnable {
     private String horseName;
@@ -16,8 +23,8 @@ public class HorsePanel extends JPanel implements Runnable {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.BLACK);
-        g.fillRect(position, 20, 50, 30);
+
+        g.drawImage(Toolkit.getDefaultToolkit().getImage("Part2/assets/horse5-nosaddle.png"), position, 28, 30, 26, null);
         g.drawString(horseName, position, 18);
     }
 
@@ -25,7 +32,7 @@ public class HorsePanel extends JPanel implements Runnable {
     public void run() {
         long startingTime = System.currentTimeMillis();
         while (position < 550) { // Adjust according to your track length
-            position += (int) (Math.random() * 10); // Adjust speed
+            position += (int) (Math.random() * 10); 
             repaint();
             try {
                 Thread.sleep(100); // Adjust speed

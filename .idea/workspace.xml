@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="" />
+    <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/View/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/ImagePanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.RaceTest.executor": "Run",
-    "Application.RaceTrackApp.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "gui-development",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.RaceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RaceTrackApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gui-development&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jawad\Documents\MaimunaGitHub\HorseRaceSimulator\Part2\assets" />

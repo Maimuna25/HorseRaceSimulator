@@ -11,7 +11,7 @@ public class ImagePanel extends JPanel {
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (image != null) {
             int width = getWidth();
