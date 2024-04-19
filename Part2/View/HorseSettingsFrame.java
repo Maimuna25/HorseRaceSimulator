@@ -25,7 +25,10 @@ public class HorseSettingsFrame extends JFrame {
         this.numLanes = trackSettings.getNumLanes();
 
         setTitle("Customize Horses");
-        setSize(300 * numLanes + 100, 500);
+//      setSize(300 * numLanes + 100, 500);
+        int frameWidth = 300 * numLanes + 100;
+        int frameHeight = 500 + (numLanes - 1) * 100;
+        setSize(frameWidth, frameHeight);
         setLocationRelativeTo(null);
 
         getContentPane().setBackground(Constants.LIGHT_BLUE);
