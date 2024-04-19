@@ -64,7 +64,32 @@ public class MainFrame extends JFrame {
         centerPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0)); // Add padding
         centerPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // TODO: Create the rest of the Center Panel.
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.fill = GridBagConstraints.NONE;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+
+        gridBagConstraints.insets = new Insets(0, 0,20,0);
+
+        customiseTrackButton = new JButton("Customise Track");
+        customiseTrackButton.setPreferredSize(new Dimension(200, 50));
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        centerPanel.add(customiseTrackButton, gridBagConstraints);
+
+        customiseHorsesButton = new JButton("Customise Horse");
+        customiseHorsesButton.setPreferredSize(new Dimension(200, 50));
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        centerPanel.add(customiseHorsesButton, gridBagConstraints);
+
+        startRaceButton = new JButton("Start Race");
+        startRaceButton.setPreferredSize(new Dimension(200, 50));
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        centerPanel.add(startRaceButton, gridBagConstraints);
 
         return centerPanel;
     }
@@ -73,7 +98,12 @@ public class MainFrame extends JFrame {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         bottomPanel.setBackground(Constants.LIGHT_BLUE);
 
-        // TODO: Create the rest of the BottomPanel.
+        // Action buttons
+        statsButton = new JButton("View Statistics and Analytics");
+        bottomPanel.add(statsButton);
+
+        bettingButton = new JButton("Enter Virtual Betting System");
+        bottomPanel.add(bettingButton);
 
         return bottomPanel;
     }
