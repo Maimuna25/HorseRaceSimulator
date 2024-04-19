@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class Constants {
     public static final Color LIGHT_BLUE = new Color(173, 216, 230);
-    public static final String[] BREEDS = {"Thoroughbred", "Quarter Horse", "Arabian"};
-    public static final String[] COAT_COLORS = {"Bay", "Black", "Chestnut"};
-    public static final String[] EQUIPMENT_OPTIONS = {"None", "Racing Shoes", "Blanket"};
-    public static final String[] ACCESSORIES_OPTIONS = {"None", "Saddle", "Feather Extensions"};
+    public static final String[] COAT_COLORS = {"Black", "Maroon", "Grey", "Light Brown", "Dark Brown"};
+    public static final String[] HAIR_COLOURS = {"Black", "Brown", "Grey"};
+    public static final String[] SADDLE_COLOUR = {"None", "Black", "Brown", "Tanned"};
+    public static final String[] BRIDLE_COLOUR = {"None", "Black", "Brown", "Tanned"};
 }
