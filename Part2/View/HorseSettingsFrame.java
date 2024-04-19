@@ -25,10 +25,8 @@ public class HorseSettingsFrame extends JFrame {
         this.numLanes = trackSettings.getNumLanes();
 
         setTitle("Customize Horses");
-//      setSize(300 * numLanes + 100, 500);
-        int frameWidth = 300 * numLanes + 100;
-        int frameHeight = 500 + (numLanes - 1) * 100;
-        setSize(frameWidth, frameHeight);
+        setSize(1400, 500);
+        setResizable(false);
         setLocationRelativeTo(null);
 
         getContentPane().setBackground(Constants.LIGHT_BLUE);
@@ -46,98 +44,101 @@ public class HorseSettingsFrame extends JFrame {
         // space between buttons
         Insets buttonInset = new Insets(20,0,0,0);
 
-        setLayout(new GridBagLayout());
+        setLayout(new FlowLayout());
+
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.fill = GridBagConstraints.NONE;
+        gridBagConstraints.fill = GridBagConstraints.RELATIVE;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
 
         for (int col = 0; col < numLanes; col++) {
+            JPanel horseCustomPanel = new JPanel(new GridBagLayout());
+            horseCustomPanel.setBackground(Constants.LIGHT_BLUE);
+
             Horse horse = horses.get(col);
 
             JLabel laneNumberLabel = new JLabel("Lane Number: " + col);
-            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridx = 0;
             gridBagConstraints.gridy = 0;
             gridBagConstraints.gridwidth = 2;
             gridBagConstraints.insets = columnPairInset;
-            add(laneNumberLabel, gridBagConstraints);
+            horseCustomPanel.add(laneNumberLabel, gridBagConstraints);
 
             JLabel horseNameLabel = new JLabel("Horse Name: ");
-            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridx = 0;
             gridBagConstraints.gridy = 1;
             gridBagConstraints.gridwidth = 1;
             gridBagConstraints.insets = labelInset;
-            add(horseNameLabel, gridBagConstraints);
+            horseCustomPanel.add(horseNameLabel, gridBagConstraints);
 
             JTextField horseNameField = new JTextField(12);
             horseNameField.setText(horse.getHorseName());
-            gridBagConstraints.gridx = 2 * col + 1;
+            gridBagConstraints.gridx = 1;
             gridBagConstraints.gridy = 1;
             gridBagConstraints.insets = columnPairInset;
-            add(horseNameField, gridBagConstraints);
+            horseCustomPanel.add(horseNameField, gridBagConstraints);
             horseNameFields.add(horseNameField);
 
             JLabel coatColourLabel = new JLabel("Coat Colour: ");
-            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridx = 0;
             gridBagConstraints.gridy = 2;
             gridBagConstraints.insets = labelInset;
-            add(coatColourLabel, gridBagConstraints);
+            horseCustomPanel.add(coatColourLabel, gridBagConstraints);
 
             JComboBox<String> coatColourComboBox = new JComboBox<>(Constants.COAT_COLORS);
             coatColourComboBox.setSelectedItem(horse.getCoatColour());
-            gridBagConstraints.gridx = 2 * col + 1;
+            gridBagConstraints.gridx = 1;
             gridBagConstraints.gridy = 2;
             gridBagConstraints.insets = columnPairInset;
-            add(coatColourComboBox, gridBagConstraints);
+            horseCustomPanel.add(coatColourComboBox, gridBagConstraints);
             coatColourComboBoxes.add(coatColourComboBox);
 
             JLabel hairColourLabel = new JLabel("Hair Colour: ");
-            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridx = 0;
             gridBagConstraints.gridy = 3;
             gridBagConstraints.insets = labelInset;
-            add(hairColourLabel, gridBagConstraints);
+            horseCustomPanel.add(hairColourLabel, gridBagConstraints);
 
             JComboBox<String> hairColourComboBox = new JComboBox<>(Constants.HAIR_COLOURS);
             hairColourComboBox.setSelectedItem(horse.getCoatColour());
-            gridBagConstraints.gridx = 2 * col + 1;
+            gridBagConstraints.gridx = 1;
             gridBagConstraints.gridy = 3;
             gridBagConstraints.insets = columnPairInset;
-            add(hairColourComboBox, gridBagConstraints);
+            horseCustomPanel.add(hairColourComboBox, gridBagConstraints);
             hairColourComboBoxes.add(hairColourComboBox);
 
             JLabel saddleColourLabel = new JLabel("Saddle Colour: ");
-            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridx = 0;
             gridBagConstraints.gridy = 4;
             gridBagConstraints.insets = labelInset;
-            add(saddleColourLabel, gridBagConstraints);
+            horseCustomPanel.add(saddleColourLabel, gridBagConstraints);
 
             JComboBox<String> saddleColourComboBox = new JComboBox<>(Constants.SADDLE_COLOUR);
             saddleColourComboBox.setSelectedItem(horse.getSaddleColour());
-            gridBagConstraints.gridx = 2 * col + 1;
+            gridBagConstraints.gridx = 1;
             gridBagConstraints.gridy = 4;
             gridBagConstraints.insets = columnPairInset;
-            add(saddleColourComboBox, gridBagConstraints);
+            horseCustomPanel.add(saddleColourComboBox, gridBagConstraints);
             saddleColourComboBoxes.add(saddleColourComboBox);
 
             JLabel bridleColourLabel = new JLabel("Bridle Colour: ");
-            gridBagConstraints.gridx = 2 * col;
+            gridBagConstraints.gridx = 0;
             gridBagConstraints.gridy = 5;
             gridBagConstraints.insets = labelInset;
-            add(bridleColourLabel, gridBagConstraints);
+            horseCustomPanel.add(bridleColourLabel, gridBagConstraints);
 
             JComboBox<String> bridleColourComboBox = new JComboBox<>(Constants.BRIDLE_COLOUR);
             bridleColourComboBox.setSelectedItem(horse.getBridleColour());
-            gridBagConstraints.gridx = 2 * col + 1;
+            gridBagConstraints.gridx = 1;
             gridBagConstraints.gridy = 5;
             gridBagConstraints.insets = columnPairInset;
-            add(bridleColourComboBox, gridBagConstraints);
+            horseCustomPanel.add(bridleColourComboBox, gridBagConstraints);
             bridleColourComboBoxes.add(bridleColourComboBox);
+
+            add(horseCustomPanel);
         }
 
         customiseButton = new JButton("Apply Changes");
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.insets = buttonInset;
-        add(customiseButton, gridBagConstraints);
+        add(customiseButton);
     }
 
     public void onCustomiseButtonClicked(ActionListener actionListener) {
