@@ -1,15 +1,7 @@
 package Part2.Model;
 
-import Part2.Model.Horse;
-import Part2.View.ImagePanel;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
 
 public class HorsePanel extends JPanel implements Runnable {
     public static final String HORSE_IMAGE = "Part2/assets/horseblack-blacksaddle-blackbridle-blackhair.png";
