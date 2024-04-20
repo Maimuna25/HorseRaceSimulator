@@ -13,13 +13,14 @@ import java.util.Objects;
 
 public class HorsePanel extends JPanel implements Runnable {
     public static final String HORSE_IMAGE = "Part2/assets/horseblack-blacksaddle-blackbridle-blackhair.png";
+    private String raceId;
     private Horse horse;
     private String horseName;
     private RaceStatistics raceStatistics;
     private int position = 0;
     private boolean fallen = false; // Track if the horse has fallen
 
-    public HorsePanel(Horse horse, RaceStatistics raceStatistics) {
+    public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
         this.horse = horse;
         this.horseName = horse.getHorseName(); // Assuming there is a getter for horseName in Horse class
         this.raceStatistics = raceStatistics;
@@ -59,7 +60,7 @@ public class HorsePanel extends JPanel implements Runnable {
 
             repaint();
             try {
-                Thread.sleep(100);
+                Thread.sleep(100); // Adjust speed
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -69,7 +70,8 @@ public class HorsePanel extends JPanel implements Runnable {
         if (!fallen) {
             double averageSpeed = Math.random() * 40;
             long timeTaken = System.currentTimeMillis() - startingTime;
-            raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(averageSpeed, timeTaken));
+
+            raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(raceId, horse.getHorseName(), averageSpeed, timeTaken, false, false, false));
         }
     }
 
