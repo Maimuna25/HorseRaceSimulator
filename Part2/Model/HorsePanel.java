@@ -38,33 +38,30 @@ public class HorsePanel extends JPanel implements Runnable {
     @Override
     public void run() {
         long startingTime = System.currentTimeMillis();
-        while (position < 550 && !fallen) {
+        int trackLength = 500;
+        while (position < trackLength && !fallen) {
             // Probability that the horse will move forward depends on the confidence
             if (Math.random() < horse.getHorseConfidence()) {
-                position += (int) (Math.random() * 10);
+                position += (int) (Math.random() * 20);
             } else {
                 // If the horse doesn't move forward, check if it falls
-                double fallProbability = 0.1 * horse.getHorseConfidence() * horse.getHorseConfidence();
-                if (Math.random() < 0.01) {
+                double fallProbability = 0.01 * horse.getHorseConfidence() * horse.getHorseConfidence();
+                if (Math.random() < fallProbability) {
                     fallen = true;
                 }
             }
 
             repaint();
             try {
-                Thread.sleep(100); // Adjust speed
+                Thread.sleep(85); // Adjust speed
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
         // Race finished or horse has fallen, update statistics
-        if (!fallen) {
-            double averageSpeed = Math.random() * 40;
-            long timeTaken = System.currentTimeMillis() - startingTime;
-
-            raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(raceId, horse.getHorseName(), averageSpeed, timeTaken, false, false, false));
-        }
+        double averageSpeed = (position * 1.0) / (System.currentTimeMillis() - startingTime);
+        raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(raceId, horse.getHorseName(), averageSpeed, System.currentTimeMillis() - startingTime, fallen, position >= 500, false));
     }
 
 

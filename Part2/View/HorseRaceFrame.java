@@ -20,7 +20,7 @@ public class HorseRaceFrame extends JFrame {
         int numLanes = track.getNumLanes();
 
         setTitle("Race Window");
-        setSize(600, 90 * numLanes);
+        setSize(565, 90 * numLanes);
         setLocationRelativeTo(null);
 
         this.raceStatistics = raceStatistics;
