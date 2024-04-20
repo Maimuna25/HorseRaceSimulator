@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class HorsePanel extends JPanel implements Runnable {
+    public static final String HORSE_IMAGE = "Part2/assets/horseblack-blacksaddle-blackbridle-blackhair.png";
     private String horseName;
     private RaceStatistics raceStatistics;
     private int position = 0;
@@ -24,7 +25,7 @@ public class HorsePanel extends JPanel implements Runnable {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.drawImage(Toolkit.getDefaultToolkit().getImage("Part2/assets/horse5-nosaddle.png"), position, 28, 30, 26, null);
+        g.drawImage(Toolkit.getDefaultToolkit().getImage(HORSE_IMAGE), position, 28, 30, 26, null);
         g.drawString(horseName, position, 18);
     }
 

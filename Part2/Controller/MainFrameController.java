@@ -4,7 +4,6 @@ import Part2.Model.Horse;
 import Part2.Model.RaceStatistics;
 import Part2.Model.Track;
 import Part2.View.MainFrame;
-import Part2.View.RaceWindow;
 import Part2.data.Constants;
 
 import java.util.ArrayList;
@@ -14,6 +13,8 @@ public class MainFrameController {
     private MainFrame mainFrame;
     private TrackSettingsController trackSettingsController;
     private HorseSettingsController horseSettingsController;
+    private RaceStatisticsController raceStatisticsController;
+    private HorseRaceController horseRaceController;
     private Track trackSettings;
     private List<Horse> horses;
     private RaceStatistics raceStatistics;
@@ -26,6 +27,8 @@ public class MainFrameController {
 
         this.trackSettingsController = new TrackSettingsController(this);
         this.horseSettingsController = new HorseSettingsController(this);
+        this.raceStatisticsController = new RaceStatisticsController(this);
+        this.horseRaceController = new HorseRaceController(this);
 
         this.mainFrame.onCustomiseTrackButtonClicked(_ -> trackSettingsController.toggleFrameVisible(true));
         this.mainFrame.onCustomiseHorsesButtonClicked(_ -> {
@@ -34,16 +37,10 @@ public class MainFrameController {
         });
 
         this.mainFrame.onStartRaceButtonClicked(_ -> {
-            System.out.println("Starting the race...");
-            // Creating a race window with three horses
-            RaceWindow raceWindow = new RaceWindow(trackSettings, horses, raceStatistics);
-            raceWindow.setVisible(true);
+            horseRaceController.toggleFrameVisibility(true);
         });
 
-        this.mainFrame.onStatsButtonClicked(_ -> {
-            // TODO: Add action to open the stats window
-            System.out.println("Opening the stats window...");
-        });
+        this.mainFrame.onStatsButtonClicked(_ -> raceStatisticsController.toggleFrameVisibility(true));
 
         this.mainFrame.onBettingButtonClicked(_ -> {
             // TODO: Add action to open the betting window
@@ -64,7 +61,7 @@ public class MainFrameController {
         int diff = trackSettings.getNumLanes() - horses.size();
         if (diff > 0) {
             for (int i = horses.size(); i < trackSettings.getNumLanes(); i++) {
-                horses.add(new Horse("Horse" + i, Constants.COAT_COLORS[0], Constants.HAIR_COLOURS[0]));
+                horses.add(new Horse("Horse " + i, Constants.COAT_COLORS[0], Constants.HAIR_COLOURS[0]));
             }
         } else if (diff < 0) {
             while (horses.size() > trackSettings.getNumLanes()) {
@@ -83,5 +80,9 @@ public class MainFrameController {
 
     public List<Horse> getHorses() {
         return horses;
+    }
+
+    public RaceStatistics getRaceStatistics() {
+        return raceStatistics;
     }
 }
