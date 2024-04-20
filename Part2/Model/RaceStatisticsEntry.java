@@ -50,4 +50,16 @@ public class RaceStatisticsEntry {
     public boolean hasFallen() {
         return fallen;
     }
+
+    public String[] values() {
+        return new String[] {
+                raceId,
+                horseName,
+                String.valueOf(averageSpeed),
+                String.valueOf(finishingTime),
+                win ? "1" : "0",
+                lose ? "1" : "0",
+                fallen ? "1" : "0"
+        };
+    }
 }
