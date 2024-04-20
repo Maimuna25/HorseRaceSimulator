@@ -12,7 +12,7 @@ public class Horse {
     private int distanceTravelled;
     private boolean fallen;
 
-    public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour) {
+    public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour, double horseConfidence) {
         this.horseName = horseName;
         this.coatColour = coatColour;
         this.hairColour = hairColour;
@@ -24,7 +24,12 @@ public class Horse {
     }
 
     public Horse(String horseName, String coatColour, String hairColour) {
-        this(horseName, coatColour, hairColour, Constants.SADDLE_COLOUR[0], Constants.BRIDLE_COLOUR[0]);
+        this(horseName, coatColour, hairColour, Constants.SADDLE_COLOUR[0], Constants.BRIDLE_COLOUR[0], Math.random());
+    }
+
+    public Horse(String horseName, String coatColor, String hairColour, double randomConfidence) {
+        this(horseName,coatColor,hairColour);
+        this.horseConfidence = randomConfidence;
     }
 
     public String getHorseName() {
@@ -67,7 +72,7 @@ public class Horse {
         this.bridleColour = bridleColour;
     }
 
-    public double getConfidence() {
+    public double getHorseConfidence() {
         return horseConfidence;
     }
 
@@ -86,12 +91,16 @@ public class Horse {
             System.out.println("Confidence rating must be between 0 and 1.");
         }
     }
+
     public boolean hasFallen() {
         return fallen;
     }
 
+
     @Override
     public String toString() {
-        return STR."Horse - \{horseName}, Coat Colour: \{coatColour}, Hair Colour: \{hairColour}, Saddle Colour: \{saddleColour}, Bridle Colour: \{bridleColour}";
+        return "Horse - " + horseName + ", Coat Colour: " + coatColour + ", Hair Colour: " + hairColour +
+                ", Saddle Colour: " + saddleColour + ", Bridle Colour: " + bridleColour;
     }
+
 }

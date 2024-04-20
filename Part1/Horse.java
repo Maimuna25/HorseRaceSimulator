@@ -27,6 +27,8 @@ public class Horse {
         this.fallen = false;
     }
 
+
+
     //Other methods of class Horse
     public void fall() {
         this.fallen = true;

@@ -26,4 +26,6 @@ public class RaceStatistics {
     public int size() {
         return raceStatisticsEntries.size();
     }
+
+
 }

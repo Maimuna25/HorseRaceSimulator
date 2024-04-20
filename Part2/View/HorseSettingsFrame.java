@@ -18,6 +18,7 @@ public class HorseSettingsFrame extends JFrame {
     private List<JComboBox<String>> hairColourComboBoxes;
     private List<JComboBox<String>> saddleColourComboBoxes;
     private List<JComboBox<String>> bridleColourComboBoxes;
+    private List<Double> horseConfidence;
     private JButton customiseButton;
 
 
@@ -36,6 +37,7 @@ public class HorseSettingsFrame extends JFrame {
         this.hairColourComboBoxes = new ArrayList<>();
         this.saddleColourComboBoxes = new ArrayList<>();
         this.bridleColourComboBoxes = new ArrayList<>();
+        this.horseConfidence = new ArrayList<>();
 
         // space between pairs of columns
         Insets columnPairInset = new Insets(0, 0, 10, 20);
@@ -134,6 +136,8 @@ public class HorseSettingsFrame extends JFrame {
             horseCustomPanel.add(bridleColourComboBox, gridBagConstraints);
             bridleColourComboBoxes.add(bridleColourComboBox);
 
+            horseConfidence.add(horses.get(col).getHorseConfidence());
+
             add(horseCustomPanel);
         }
 
@@ -174,7 +178,8 @@ public class HorseSettingsFrame extends JFrame {
                     getCoatColour(i),
                     getHairColour(i),
                     getSaddleColour(i),
-                    getBridleColour(i)
+                    getBridleColour(i),
+                    horseConfidence.get(i)
             ));
         }
 

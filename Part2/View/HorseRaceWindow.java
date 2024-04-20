@@ -28,7 +28,7 @@ public class HorseRaceWindow extends JFrame {
 
         this.horsePanels = new ArrayList<>();
         for (Horse horse : horses) {
-            HorsePanel horsePanel = new HorsePanel(horse.getHorseName(), raceStatistics);
+            HorsePanel horsePanel = new HorsePanel(horse, raceStatistics);
             horsePanels.add(horsePanel);
             raceTrackPanel.add(horsePanel);
         }

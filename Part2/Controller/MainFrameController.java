@@ -51,7 +51,8 @@ public class MainFrameController {
     private void setUpDefaultSettings() {
         this.trackSettings = new Track(1, 500);
         this.horses = new ArrayList<>();
-        horses.add(new Horse("Horse 0", Constants.COAT_COLORS[0], Constants.HAIR_COLOURS[0]));
+        double randomHorseConfidence = Math.random();
+        horses.add(new Horse("Horse 0", Constants.COAT_COLORS[0], Constants.HAIR_COLOURS[0],randomHorseConfidence));
     }
 
     public void setTrackSettings(Track trackSettings) {
@@ -85,4 +86,8 @@ public class MainFrameController {
     public RaceStatistics getRaceStatistics() {
         return raceStatistics;
     }
+
+
+
+
 }
