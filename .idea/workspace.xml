@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part2/View/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/ImagePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +92,6 @@
         <item itemvalue="Application.RaceTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

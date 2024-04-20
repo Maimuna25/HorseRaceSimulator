@@ -8,6 +8,9 @@ public class Horse {
     private String hairColour;
     private String saddleColour;
     private String bridleColour;
+    private double horseConfidence;
+    private int distanceTravelled;
+    private boolean fallen;
 
     public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour) {
         this.horseName = horseName;
@@ -15,6 +18,9 @@ public class Horse {
         this.hairColour = hairColour;
         this.saddleColour = saddleColour;
         this.bridleColour = bridleColour;
+        this.horseConfidence = horseConfidence;
+        this.distanceTravelled = 0;
+        this.fallen = false;
     }
 
     public Horse(String horseName, String coatColour, String hairColour) {
@@ -59,6 +65,29 @@ public class Horse {
 
     public void setBridleColour(String bridleColour) {
         this.bridleColour = bridleColour;
+    }
+
+    public double getConfidence() {
+        return horseConfidence;
+    }
+
+    public int getDistanceTravelled() {
+        return distanceTravelled;
+    }
+
+    public void fall() {
+        this.fallen = true;
+    }
+
+    public void setConfidence(double newConfidence) {
+        if (newConfidence >= 0 && newConfidence <= 1) {
+            this.horseConfidence = newConfidence;
+        } else {
+            System.out.println("Confidence rating must be between 0 and 1.");
+        }
+    }
+    public boolean hasFallen() {
+        return fallen;
     }
 
     @Override
