@@ -10,7 +10,8 @@ public class HorsePanel extends JPanel implements Runnable {
     private String horseName;
     private RaceStatistics raceStatistics;
     private int position = 0;
-    private boolean fallen = false; // Track if the horse has fallen
+    private boolean fallen = false;
+    private boolean finished = false;
 
     public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
         this.horse = horse;
@@ -33,6 +34,17 @@ public class HorsePanel extends JPanel implements Runnable {
         }
 
         g.drawString(horseName, position, 18);
+
+        // Draw status
+        String status;
+        if (fallen) {
+            status = ":Fallen";
+        } else if (finished) {
+            status = ":Finished";
+        } else {
+            status = ":Running";
+        }
+        g.drawString(status, position + 50, 18);
     }
 
     @Override
@@ -44,16 +56,19 @@ public class HorsePanel extends JPanel implements Runnable {
             if (Math.random() < horse.getHorseConfidence()) {
                 position += (int) (Math.random() * 20);
             } else {
-                // If the horse doesn't move forward, check if it falls
-                double fallProbability = 0.01 * horse.getHorseConfidence() * horse.getHorseConfidence();
-                if (Math.random() < fallProbability) {
+                if (Math.random() < 0.01) {
                     fallen = true;
                 }
             }
 
+            // Check if the horse has finished the race
+            if (position >= trackLength && !fallen && !finished) {
+                finished = true;
+            }
+
             repaint();
             try {
-                Thread.sleep(85); // Adjust speed
+                Thread.sleep(80); // Adjust speed
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
