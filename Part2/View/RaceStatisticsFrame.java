@@ -1,36 +1,33 @@
 package Part2.View;
 
 import Part2.Model.RaceStatistics;
-import Part2.Model.RaceStatisticsEntry;
+import Part2.data.Constants;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class RaceStatisticsFrame extends JFrame {
     public RaceStatisticsFrame(RaceStatistics statistics) {
         setTitle("Statistics and Analytics");
-        setSize(400, 300);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
-        JPanel mainPanel = new JPanel(new GridLayout(1, 2));
-        mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
+        getContentPane().setBackground(Constants.LIGHT_BLUE);
 
-        JTextArea statisticsTextArea = new JTextArea();
-        statisticsTextArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(statisticsTextArea);
-        mainPanel.add(scrollPane);
+        setLayout(new GridBagLayout());
 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < statistics.size(); i++) {
-            sb.append("Race Number: ").append(i + 1).append("\n");
-            RaceStatisticsEntry entry = statistics.getRaceStatistics(i);
-            sb.append("Average Speed: ").append(entry.getAverageSpeed()).append("\n");
-            sb.append("Finishing Time: ").append(entry.getFinishingTime()).append("\n\n");
-        }
-        statisticsTextArea.setText(sb.toString());
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.insets = new Insets(0, 0, 10, 0);
+        gridBagConstraints.fill = GridBagConstraints.NONE;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
 
-        add(mainPanel);
+        JTable table = new JTable(statistics.getData(), statistics.getHeaders());
+        table.setBounds(0, 0, 300, 200);
+
+        JScrollPane scrollPane = new JScrollPane(table);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(scrollPane, gridBagConstraints);
     }
 
 }

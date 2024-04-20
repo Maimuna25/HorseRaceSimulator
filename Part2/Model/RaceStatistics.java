@@ -1,21 +1,21 @@
 package Part2.Model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class RaceStatistics {
     private List<RaceStatisticsEntry> raceStatisticsEntries;
+    private String[] headers;
 
     public RaceStatistics() {
         this.raceStatisticsEntries = new ArrayList<>();
 
         // Get all the data from raceStatistics.csv and enter them into raceStatisticsEntry
         try (BufferedReader br = new BufferedReader(new FileReader("Part2/data/raceStatistics.csv"))) {
-            String line = br.readLine();
+            String line;
+            this.headers = br.readLine().split(",");  // Remove the header
+
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 RaceStatisticsEntry entry = new RaceStatisticsEntry(
@@ -30,14 +30,20 @@ public class RaceStatistics {
                 raceStatisticsEntries.add(entry);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
     // Method to update statistics for a race
     public void updateRaceStatistics(RaceStatisticsEntry entry) {
         raceStatisticsEntries.add(entry);
-        // TODO: Add this entry into raceStatistics.csv as well.
+
+        // Add this entry into raceStatistics.csv as well.
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("Part2/data/raceStatistics.csv", true))) {
+            bw.write(String.join(",", entry.values()) + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public RaceStatisticsEntry getRaceStatistics(int index) {
@@ -48,5 +54,15 @@ public class RaceStatistics {
         return raceStatisticsEntries.size();
     }
 
+    public String[] getHeaders() {
+        return headers;
+    }
 
+    public String[][] getData() {
+        String[][] data = new String[raceStatisticsEntries.size()][headers.length];
+        for (int i = 0; i < raceStatisticsEntries.size(); i++) {
+            data[i] = raceStatisticsEntries.get(i).values();
+        }
+        return data;
+    }
 }
