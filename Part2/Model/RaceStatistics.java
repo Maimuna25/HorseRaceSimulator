@@ -15,7 +15,7 @@ public class RaceStatistics {
 
         // Get all the data from raceStatistics.csv and enter them into raceStatisticsEntry
         try (BufferedReader br = new BufferedReader(new FileReader("Part2/data/raceStatistics.csv"))) {
-            String line;
+            String line = br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 RaceStatisticsEntry entry = new RaceStatisticsEntry(
@@ -37,7 +37,6 @@ public class RaceStatistics {
     // Method to update statistics for a race
     public void updateRaceStatistics(RaceStatisticsEntry entry) {
         raceStatisticsEntries.add(entry);
-
         // TODO: Add this entry into raceStatistics.csv as well.
     }
 
