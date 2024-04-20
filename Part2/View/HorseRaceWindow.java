@@ -10,17 +10,15 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RaceWindow extends JFrame {
+public class HorseRaceWindow extends JFrame {
     private RaceStatistics raceStatistics;
+    private List<HorsePanel> horsePanels;
 
-    public RaceWindow(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
-        setTitle("Race Window");
-
+    public HorseRaceWindow(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
         int numLanes = track.getNumLanes();
 
-        int frameHeight = 90 * numLanes;
-        setSize(600, frameHeight);
-
+        setTitle("Race Window");
+        setSize(600, 90 * numLanes);
         setLocationRelativeTo(null);
 
         this.raceStatistics = raceStatistics;
@@ -28,7 +26,7 @@ public class RaceWindow extends JFrame {
         JPanel raceTrackPanel = new JPanel();
         raceTrackPanel.setLayout(new GridLayout(numLanes, 1));
 
-        List<HorsePanel> horsePanels = new ArrayList<>();
+        this.horsePanels = new ArrayList<>();
         for (Horse horse : horses) {
             HorsePanel horsePanel = new HorsePanel(horse.getHorseName(), raceStatistics);
             horsePanels.add(horsePanel);
@@ -36,7 +34,9 @@ public class RaceWindow extends JFrame {
         }
 
         add(raceTrackPanel);
+    }
 
+    public void startGame() {
         for (HorsePanel panel : horsePanels) {
             new Thread(panel).start();
         }

@@ -7,9 +7,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class StatisticsWindow extends JFrame {
-    private RaceStatistics statistics;
-    public StatisticsWindow() {
+public class RaceStatisticsFrame extends JFrame {
+    public RaceStatisticsFrame(RaceStatistics statistics) {
         setTitle("Statistics and Analytics");
         setSize(400, 300);
         setLocationRelativeTo(null);
