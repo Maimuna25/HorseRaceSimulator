@@ -12,12 +12,15 @@ import java.util.Objects;
 
 public class HorsePanel extends JPanel implements Runnable {
     public static final String HORSE_IMAGE = "Part2/assets/horseblack-blacksaddle-blackbridle-blackhair.png";
-    private String horseName;
+    private String raceId;
+    private Horse horse;
+    private int trackLength;
     private RaceStatistics raceStatistics;
     private int position = 0;
 
-    public HorsePanel(String horseName, RaceStatistics raceStatistics) {
-        this.horseName = horseName;
+    public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
+        this.horse = horse;
+        this.trackLength = trackLength;
         this.raceStatistics = raceStatistics;
     }
 
@@ -26,7 +29,7 @@ public class HorsePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         g.drawImage(Toolkit.getDefaultToolkit().getImage(HORSE_IMAGE), position, 28, 30, 26, null);
-        g.drawString(horseName, position, 18);
+        g.drawString(horse.getHorseName(), position, 18);
     }
 
     @Override
@@ -42,9 +45,11 @@ public class HorsePanel extends JPanel implements Runnable {
             }
         }
         // Race finished, update statistics
-        double averageSpeed = Math.random() * 40;
-        long timeTaken = System.currentTimeMillis() - startingTime;
-        raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(averageSpeed, timeTaken));
+        long timeTaken = (System.currentTimeMillis() - startingTime) / 1000;
+        double averageSpeed = (double) trackLength / timeTaken;
+
+        // TODO: figure out whether the horse has won, lost or fallen.
+        raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(raceId, horse.getHorseName(), averageSpeed, timeTaken, false, false, false));
     }
 }
 

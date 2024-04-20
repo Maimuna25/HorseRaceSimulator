@@ -1,11 +1,11 @@
 package Part2.Controller;
 
-import Part2.View.HorseRaceWindow;
+import Part2.View.HorseRaceFrame;
 
 public class HorseRaceController {
 
     private MainFrameController parentController;
-    private HorseRaceWindow horseRaceFrame;
+    private HorseRaceFrame horseRaceFrame;
 
     public HorseRaceController(MainFrameController parentController) {
         this.parentController = parentController;
@@ -19,7 +19,7 @@ public class HorseRaceController {
     }
 
     private void setUpHorseRace() {
-        horseRaceFrame = new HorseRaceWindow(
+        horseRaceFrame = new HorseRaceFrame(
                 parentController.getTrackSettings(),
                 parentController.getHorses(),
                 parentController.getRaceStatistics()

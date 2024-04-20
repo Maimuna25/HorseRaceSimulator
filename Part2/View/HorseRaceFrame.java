@@ -9,12 +9,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-public class HorseRaceWindow extends JFrame {
+public class HorseRaceFrame extends JFrame {
+    private String raceId;
     private RaceStatistics raceStatistics;
     private List<HorsePanel> horsePanels;
 
-    public HorseRaceWindow(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
+    public HorseRaceFrame(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
         int numLanes = track.getNumLanes();
 
         setTitle("Race Window");
@@ -26,9 +28,11 @@ public class HorseRaceWindow extends JFrame {
         JPanel raceTrackPanel = new JPanel();
         raceTrackPanel.setLayout(new GridLayout(numLanes, 1));
 
+        this.raceId = UUID.randomUUID().toString();
+
         this.horsePanels = new ArrayList<>();
         for (Horse horse : horses) {
-            HorsePanel horsePanel = new HorsePanel(horse.getHorseName(), raceStatistics);
+            HorsePanel horsePanel = new HorsePanel(raceId, horse, track.getTrackLength(), raceStatistics);
             horsePanels.add(horsePanel);
             raceTrackPanel.add(horsePanel);
         }
