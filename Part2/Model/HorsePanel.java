@@ -14,7 +14,8 @@ public class HorsePanel extends JPanel implements Runnable {
     private boolean fallen;
     private boolean finished;
     private boolean firstPlace;  // TODO: figure out how to determine which horse reach the finish line first.
-   
+    private static HorsePanel winner;
+
 
     public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
         this.raceId = raceId;
@@ -70,8 +71,14 @@ public class HorsePanel extends JPanel implements Runnable {
             }
 
             // End the race when all horses (not fallen) have finished the race.
+            // Set the winner if no winner has been set once the first horse has reached the end
+            // call awardFirstPlace function
             if (position >= trackLength && !fallen && !finished) {
                     finished = true;
+                if (winner == null) {
+                    winner = this;
+                    awardFirstPlace();
+                }
             }
 
             repaint();
@@ -98,5 +105,9 @@ public class HorsePanel extends JPanel implements Runnable {
 
     public void awardFirstPlace() {
         firstPlace = true;
+    }
+
+    public static HorsePanel getWinner() {
+        return winner;
     }
 }
