@@ -13,7 +13,6 @@ import java.util.UUID;
 
 public class HorseRaceFrame extends JFrame {
     private String raceId;
-    private RaceStatistics raceStatistics;
     private List<HorsePanel> horsePanels;
 
     public HorseRaceFrame(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
@@ -23,12 +22,11 @@ public class HorseRaceFrame extends JFrame {
         setSize(610, 90 * numLanes);
         setLocationRelativeTo(null);
 
-        this.raceStatistics = raceStatistics;
-
         JPanel raceTrackPanel = new JPanel();
         raceTrackPanel.setLayout(new GridLayout(numLanes, 1));
 
         this.raceId = UUID.randomUUID().toString();
+        System.out.println(raceId);
 
         this.horsePanels = new ArrayList<>();
         for (Horse horse : horses) {

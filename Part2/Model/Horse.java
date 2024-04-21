@@ -9,7 +9,6 @@ public class Horse {
     private String saddleColour;
     private String bridleColour;
     private double horseConfidence;
-    private int distanceTravelled;
     private boolean fallen;
 
     public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour, double horseConfidence) {
@@ -19,7 +18,6 @@ public class Horse {
         this.saddleColour = saddleColour;
         this.bridleColour = bridleColour;
         this.horseConfidence = horseConfidence;
-        this.distanceTravelled = 0;
         this.fallen = false;
     }
 
@@ -74,10 +72,6 @@ public class Horse {
 
     public double getHorseConfidence() {
         return horseConfidence;
-    }
-
-    public int getDistanceTravelled() {
-        return distanceTravelled;
     }
 
     public void fall() {

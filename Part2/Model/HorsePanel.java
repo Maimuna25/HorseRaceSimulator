@@ -10,15 +10,21 @@ public class HorsePanel extends JPanel implements Runnable {
     private String horseName;
     private RaceStatistics raceStatistics;
     private int trackLength;
-    private int position = 0;
-    private boolean fallen = false;
-    private boolean finished = false;
+    private int position;
+    private boolean fallen;
+    private boolean finished;
+    private boolean firstPlace;  // TODO: figure out how to determine which horse reach the finish line first.
 
     public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
+        this.raceId = raceId;
         this.horse = horse;
         this.horseName = horse.getHorseName(); // Assuming there is a getter for horseName in Horse class
         this.raceStatistics = raceStatistics;
         this.trackLength = trackLength;
+        this.position = 0;
+        this.fallen = false;
+        this.finished = false;
+        this.firstPlace = false;
     }
 
     @Override
@@ -52,7 +58,6 @@ public class HorsePanel extends JPanel implements Runnable {
     @Override
     public void run() {
         long startingTime = System.currentTimeMillis();
-        int trackLength = 500;
         while (position < trackLength && !fallen) {
             // Probability that the horse will move forward depends on the confidence
             if (Math.random() < horse.getHorseConfidence()) {
@@ -84,12 +89,13 @@ public class HorsePanel extends JPanel implements Runnable {
                 horse.getHorseName(),
                 averageSpeed,
                 timeTaken,
-                false,  // TODO: figure out whether the horse won or not.
-                false,      // TODO: figure out whether the horse finished the race but didn't win.
+                finished && firstPlace,
+                finished && !firstPlace,
                 fallen
         ));
     }
 
-
-
+    public void awardFirstPlace() {
+        firstPlace = true;
+    }
 }
