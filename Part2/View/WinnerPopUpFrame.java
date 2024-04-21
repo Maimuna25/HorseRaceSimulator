@@ -14,8 +14,12 @@ public class WinnerPopUpFrame extends JFrame {
         Color customGreen = new Color(144, 238, 144);
         getContentPane().setBackground(customGreen);
 
-        JLabel winnerLabel = new JLabel("The winner is " + winnerName + "!");
+        JLabel winnerLabel = new JLabel("The Winner is " + winnerName + "!");
         winnerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        Font labelFont = winnerLabel.getFont();
+        winnerLabel.setFont(new Font(labelFont.getName(), Font.PLAIN, 20));
+
         add(winnerLabel, BorderLayout.CENTER);
 
         JButton closeButton = new JButton("Close");
