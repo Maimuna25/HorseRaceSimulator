@@ -11,7 +11,8 @@ public class HorsePanel extends JPanel implements Runnable {
     private RaceStatistics raceStatistics;
     private int trackLength;
     private int position = 0;
-    private boolean fallen = false; // Track if the horse has fallen
+    private boolean fallen = false;
+    private boolean finished = false;
 
     public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
         this.horse = horse;
@@ -35,26 +36,41 @@ public class HorsePanel extends JPanel implements Runnable {
         }
 
         g.drawString(horseName, position, 18);
+
+        // Draw status
+        String status;
+        if (fallen) {
+            status = ":Fallen";
+        } else if (finished) {
+            status = ":Finished";
+        } else {
+            status = ":Running";
+        }
+        g.drawString(status, position + 50, 18);
     }
 
     @Override
     public void run() {
         long startingTime = System.currentTimeMillis();
-        while (position < 550 && !fallen) {
+        int trackLength = 500;
+        while (position < trackLength && !fallen) {
             // Probability that the horse will move forward depends on the confidence
             if (Math.random() < horse.getHorseConfidence()) {
-                position += (int) (Math.random() * 10);
+                position += (int) (Math.random() * 20);
             } else {
-                // If the horse doesn't move forward, check if it falls
-                double fallProbability = 0.1 * horse.getHorseConfidence() * horse.getHorseConfidence();
                 if (Math.random() < 0.01) {
                     fallen = true;
                 }
             }
 
+            // Check if the horse has finished the race
+            if (position >= trackLength && !fallen && !finished) {
+                finished = true;
+            }
+
             repaint();
             try {
-                Thread.sleep(100); // Adjust speed
+                Thread.sleep(80); // Adjust speed
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -69,7 +85,7 @@ public class HorsePanel extends JPanel implements Runnable {
                 averageSpeed,
                 timeTaken,
                 false,  // TODO: figure out whether the horse won or not.
-                false,      // TODO: figure out whether the horse finished the race or not if it didn't win.
+                false,      // TODO: figure out whether the horse finished the race but didn't win.
                 fallen
         ));
     }
