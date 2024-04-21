@@ -4,12 +4,12 @@ public class RaceStatisticsEntry {
     private String raceId;
     private String horseName;
     private double averageSpeed;
-    private long finishingTime; // Represented in milliseconds
+    private int finishingTime;
     private boolean win;
     private boolean lose;
     private boolean fallen;
 
-    public RaceStatisticsEntry(String raceId, String horseName, double averageSpeed, long finishingTime, boolean win, boolean lose, boolean fallen) {
+    public RaceStatisticsEntry(String raceId, String horseName, double averageSpeed, int finishingTime, boolean win, boolean lose, boolean fallen) {
         this.raceId = raceId;
         this.horseName = horseName;
         this.averageSpeed = averageSpeed;
@@ -24,11 +24,11 @@ public class RaceStatisticsEntry {
     }
 
     public int getFinishingTime() {
-        return (int) (finishingTime / 1000);
+        return finishingTime;
     }
 
     public int getDistanceTravelled() {
-        return (int) (averageSpeed * finishingTime / 1000);
+        return (int) Math.round(averageSpeed * finishingTime);
     }
 
     public String getRaceId() {

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RaceStatistics {
+    public static final String RACE_DATA_FILE = "Part2/data/raceStatistics.csv";
     private List<RaceStatisticsEntry> raceStatisticsEntries;
     private String[] headers;
 
@@ -12,7 +13,7 @@ public class RaceStatistics {
         this.raceStatisticsEntries = new ArrayList<>();
 
         // Get all the data from raceStatistics.csv and enter them into raceStatisticsEntry
-        try (BufferedReader br = new BufferedReader(new FileReader("Part2/data/raceStatistics.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(RACE_DATA_FILE))) {
             String line;
             this.headers = br.readLine().split(",");  // Remove the header
 
@@ -39,11 +40,15 @@ public class RaceStatistics {
         raceStatisticsEntries.add(entry);
 
         // Add this entry into raceStatistics.csv as well.
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("Part2/data/raceStatistics.csv", true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RACE_DATA_FILE, true))) {
             bw.write(String.join(",", entry.values()) + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<RaceStatisticsEntry> getAllEntries() {
+        return raceStatisticsEntries;
     }
 
     public RaceStatisticsEntry getRaceStatistics(int index) {

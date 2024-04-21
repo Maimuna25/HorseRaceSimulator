@@ -9,6 +9,7 @@ public class HorsePanel extends JPanel implements Runnable {
     private Horse horse;
     private String horseName;
     private RaceStatistics raceStatistics;
+    private int trackLength;
     private int position = 0;
     private boolean fallen = false; // Track if the horse has fallen
 
@@ -16,6 +17,7 @@ public class HorsePanel extends JPanel implements Runnable {
         this.horse = horse;
         this.horseName = horse.getHorseName(); // Assuming there is a getter for horseName in Horse class
         this.raceStatistics = raceStatistics;
+        this.trackLength = trackLength;
     }
 
     @Override
@@ -59,12 +61,17 @@ public class HorsePanel extends JPanel implements Runnable {
         }
 
         // Race finished or horse has fallen, update statistics
-        if (!fallen) {
-            double averageSpeed = Math.random() * 40;
-            long timeTaken = System.currentTimeMillis() - startingTime;
-
-            raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(raceId, horse.getHorseName(), averageSpeed, timeTaken, false, false, false));
-        }
+        int timeTaken = (int) ((System.currentTimeMillis() - startingTime) / 1000);
+        double averageSpeed = (double) trackLength / timeTaken;
+        raceStatistics.updateRaceStatistics(new RaceStatisticsEntry(
+                raceId,
+                horse.getHorseName(),
+                averageSpeed,
+                timeTaken,
+                false,  // TODO: figure out whether the horse won or not.
+                false,      // TODO: figure out whether the horse finished the race or not if it didn't win.
+                fallen
+        ));
     }
 
 
