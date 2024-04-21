@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Part2/View/WinnerPopUpFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part1/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/Race.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/View/HorseRaceFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/HorseRaceFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/data/raceStatistics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/data/raceStatistics.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RaceTrackApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="RaceTrackApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Part2.RaceTrackApp" />
       <module name="HorseRaceSimulator" />
       <extension name="coverage">
@@ -88,7 +93,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RaceTrackApp" />
         <item itemvalue="Application.RaceTest" />
       </list>
     </recent_temporary>

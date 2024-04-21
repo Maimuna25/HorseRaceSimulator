@@ -14,9 +14,11 @@ import java.util.UUID;
 public class HorseRaceFrame extends JFrame {
     private String raceId;
     private List<HorsePanel> horsePanels;
+    private static HorseRaceFrame instance;
 
     public HorseRaceFrame(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
         int numLanes = track.getNumLanes();
+        instance = this;
 
         setTitle("Race Window");
         setSize(610, 90 * numLanes);
@@ -36,6 +38,10 @@ public class HorseRaceFrame extends JFrame {
         }
 
         add(raceTrackPanel);
+    }
+
+    public static HorseRaceFrame getFrame() {
+        return instance;
     }
 
     public void startGame() {
