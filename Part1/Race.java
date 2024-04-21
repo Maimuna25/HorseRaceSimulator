@@ -44,7 +44,7 @@ public class Race {
         } else if (laneNumber == 3) {
             lane3Horse = theHorse;
         } else {
-            System.out.println("Cannot add horse to lane " + laneNumber + " because there is no such lane");
+             throw new IllegalArgumentException("Invalid lane number: " + laneNumber);
         }
     }
 
