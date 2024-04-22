@@ -1,5 +1,7 @@
 package Part2.Model;
 
+import Part2.View.WinnerPopUpFrame;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,12 +15,14 @@ public class HorsePanel extends JPanel implements Runnable {
     private int position;
     private boolean fallen;
     private boolean finished;
-    private boolean firstPlace;  // TODO: figure out how to determine which horse reach the finish line first.
+    private boolean firstPlace;
+    private static HorsePanel winner;
+
 
     public HorsePanel(String raceId, Horse horse, int trackLength, RaceStatistics raceStatistics) {
         this.raceId = raceId;
         this.horse = horse;
-        this.horseName = horse.getHorseName(); // Assuming there is a getter for horseName in Horse class
+        this.horseName = horse.getHorseName();
         this.raceStatistics = raceStatistics;
         this.trackLength = trackLength;
         this.position = 0;
@@ -68,9 +72,18 @@ public class HorsePanel extends JPanel implements Runnable {
                 }
             }
 
-            // Check if the horse has finished the race
+            // End the race when all horses (not fallen) have finished the race.
+            // Set the winner if no winner has been set once the first horse has reached the end
+            // call awardFirstPlace function
             if (position >= trackLength && !fallen && !finished) {
-                finished = true;
+                    finished = true;
+                if (winner == null) {
+                    winner = this;
+                    awardFirstPlace();
+
+                    String winnerName = horseName;
+                    new WinnerPopUpFrame(winnerName);
+                }
             }
 
             repaint();
@@ -80,6 +93,7 @@ public class HorsePanel extends JPanel implements Runnable {
                 e.printStackTrace();
             }
         }
+
 
         // Race finished or horse has fallen, update statistics
         int timeTaken = (int) ((System.currentTimeMillis() - startingTime) / 1000);
@@ -98,4 +112,5 @@ public class HorsePanel extends JPanel implements Runnable {
     public void awardFirstPlace() {
         firstPlace = true;
     }
+
 }
