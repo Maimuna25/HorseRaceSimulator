@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part2/Controller/MainFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Controller/MainFrameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part2/Model/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/Horse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part2/View/HorseRaceFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/HorseRaceFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part2/View/HorseSettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/HorseSettingsFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part2/data/raceStatistics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/data/raceStatistics.csv" afterDir="false" />
     </list>
@@ -42,21 +38,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.RaceTest.executor": "Run",
-    "Application.RaceTrackApp.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "gui-development",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.RaceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RaceTrackApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gui-development&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jawad\Documents\MaimunaGitHub\HorseRaceSimulator\Part2\assets" />
