@@ -27,7 +27,10 @@ public class HorseSettingsFrame extends JFrame {
         this.numLanes = trackSettings.getNumLanes();
 
         setTitle("Customize Horses");
-        setSize(1400, 500);
+
+        int numHorses = trackSettings.getNumLanes();
+        int windowHeight = numHorses <= 5 ? 430 : 780;
+        setSize(1400, windowHeight);
         setResizable(false);
         setLocationRelativeTo(null);
 
