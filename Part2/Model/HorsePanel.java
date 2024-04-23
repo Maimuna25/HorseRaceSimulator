@@ -28,6 +28,7 @@ public class HorsePanel extends JPanel implements Runnable {
         this.fallen = false;
         this.finished = false;
         this.firstPlace = false;
+        winner = null;
     }
 
     @Override
@@ -75,13 +76,10 @@ public class HorsePanel extends JPanel implements Runnable {
             // Set the winner if no winner has been set once the first horse has reached the end
             // call awardFirstPlace function
             if (position >= trackLength && !fallen && !finished) {
-                    finished = true;
+                finished = true;
                 if (winner == null) {
                     winner = this;
                     awardFirstPlace();
-
-                    String winnerName = horseName;
-                    new WinnerPopUpFrame(winnerName);
                 }
             }
 
@@ -106,6 +104,13 @@ public class HorsePanel extends JPanel implements Runnable {
                 finished && !firstPlace,
                 fallen
         ));
+
+        // Check if this horse won the race and display the winner popup
+        if (firstPlace && winner == this) {
+            String winnerName = horseName;
+            new WinnerPopUpFrame(winnerName);
+
+        }
     }
 
     public void awardFirstPlace() {
