@@ -83,13 +83,16 @@ public class RaceStatisticsFrame extends JFrame {
     private String getHorseInfo(RaceStatistics raceStatistics, String horseName) {
         List<RaceStatisticsEntry> horseEntries = raceStatistics.getAllEntries()
                 .stream()
-                .filter(h -> h.getHorseName().equals(horseName))
+                .filter(h -> h.getHorseName().equals(horseName)) // filter() removes any Horse object that doesn't match the condition given.
                 .toList();
 
+        //.map() function extracts the distance travelled for each horse
+        //.reduce() function sums up distances, starting with zero
         int totalDistance = horseEntries.stream().map(RaceStatisticsEntry::getDistanceTravelled).reduce(0, Integer::sum);
-        int wins = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasWon).count();
-        int loss = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasLost).count();
-        int falls = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasFallen).count();
+
+        int wins = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasWon).count();  // Filter and count horses that have won
+        int loss = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasLost).count(); // Filter and count horses that have lost
+        int falls = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasFallen).count(); // Filter and count horses that have fallen
 
         StringBuilder sb = new StringBuilder();
         sb.append("Horse Selected: ").append(horseName).append("\n");

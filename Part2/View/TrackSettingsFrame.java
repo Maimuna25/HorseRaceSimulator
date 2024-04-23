@@ -33,9 +33,7 @@ public class TrackSettingsFrame extends JFrame {
         JLabel trackLengthValueLabel = new JLabel("Track Length: " + trackLengthSlider.getValue() + " meters");
         applyButton = new JButton("Apply Changes");
 
-        // space between fields
         Insets fieldsInset = new Insets(0, 0, 10, 0);
-        // space between buttons
         Insets buttonInset = new Insets(20,0,0,0);
 
         setLayout(new GridBagLayout());

@@ -47,7 +47,6 @@ public class HorsePanel extends JPanel implements Runnable {
 
         g.drawString(horseName, position, 18);
 
-        // Draw status
         String status;
         if (fallen) {
             status = ":Fallen";
@@ -63,7 +62,7 @@ public class HorsePanel extends JPanel implements Runnable {
     public void run() {
         long startingTime = System.currentTimeMillis();
         while (position < trackLength && !fallen) {
-            // Probability that the horse will move forward depends on the confidence
+
             if (Math.random() < horse.getHorseConfidence()) {
                 position += (int) (Math.random() * 20);
             } else {
@@ -72,9 +71,6 @@ public class HorsePanel extends JPanel implements Runnable {
                 }
             }
 
-            // End the race when all horses (not fallen) have finished the race.
-            // Set the winner if no winner has been set once the first horse has reached the end
-            // call awardFirstPlace function
             if (position >= trackLength && !fallen && !finished) {
                 finished = true;
                 if (winner == null) {
@@ -105,7 +101,6 @@ public class HorsePanel extends JPanel implements Runnable {
                 fallen
         ));
 
-        // Check if this horse won the race and display the winner popup
         if (firstPlace && winner == this) {
             String winnerName = horseName;
             new WinnerPopUpFrame(winnerName);

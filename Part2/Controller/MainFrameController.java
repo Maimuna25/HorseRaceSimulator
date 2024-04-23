@@ -57,7 +57,7 @@ public class MainFrameController {
     public void setTrackSettings(Track trackSettings) {
         this.trackSettings = trackSettings;
 
-        // need to update the list of horses when track settings have changed.
+        // update the list of horses when track settings have changed.
         int diff = trackSettings.getNumLanes() - horses.size();
         if (diff > 0) {
             for (int i = horses.size(); i < trackSettings.getNumLanes(); i++) {

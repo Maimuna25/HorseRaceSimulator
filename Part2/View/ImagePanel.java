@@ -6,6 +6,7 @@ import java.awt.*;
 public class ImagePanel extends JPanel {
     private Image image;
 
+    // Load the image from the specified image path using Toolkit
     public ImagePanel(String imagePath) {
         image = Toolkit.getDefaultToolkit().getImage(imagePath);
     }

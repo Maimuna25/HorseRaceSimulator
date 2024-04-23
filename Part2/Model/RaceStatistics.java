@@ -39,7 +39,7 @@ public class RaceStatistics {
     public void updateRaceStatistics(RaceStatisticsEntry entry) {
         raceStatisticsEntries.add(entry);
 
-        // Add this entry into raceStatistics.csv as well.
+        // Add this entry into raceStatistics.csv.
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(RACE_DATA_FILE, true))) {
             bw.write(String.join(",", entry.values()) + "\n");
         } catch (IOException e) {

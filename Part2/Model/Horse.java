@@ -81,7 +81,7 @@ public class Horse {
         // .replaceAll() removes all whitespaces using Regular Expressions (regex)
         sb.append("horse").append(coatColour.toLowerCase().replaceAll("\\s", "")).append("-");
 
-        // "None" for saddle and bridle colours needs to be changed to "no" for image file name.
+        //Uses a ternary statement to quickly do a selection out of the two options
         sb.append(saddleColour.equals("None") ? "no" : saddleColour.toLowerCase()).append("saddle").append("-");
         sb.append(bridleColour.equals("None") ? "no" : bridleColour.toLowerCase()).append("bridle").append("-");
 
