@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class HorsePanel extends JPanel implements Runnable {
-    public static final String HORSE_IMAGE = "Part2/assets/horseblack-blacksaddle-blackbridle-blackhair.png";
     private String raceId;
     private Horse horse;
     private String horseName;
@@ -39,10 +38,10 @@ public class HorsePanel extends JPanel implements Runnable {
         if (fallen) {
             Graphics2D g2d = (Graphics2D) g.create();
             g2d.rotate(Math.PI, position + 15, 41);
-            g2d.drawImage(Toolkit.getDefaultToolkit().getImage(HORSE_IMAGE), position, 28, 30, 26, null);
+            g2d.drawImage(Toolkit.getDefaultToolkit().getImage(horse.getImagePath()), position, 28, 30, 26, null);
             g2d.dispose();
         } else {
-            g.drawImage(Toolkit.getDefaultToolkit().getImage(HORSE_IMAGE), position, 28, 30, 26, null);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage(horse.getImagePath()), position, 28, 30, 26, null);
         }
 
         g.drawString(horseName, position, 18);

@@ -32,7 +32,6 @@ public class HorseRaceFrame extends JFrame {
         raceTrackPanel.setLayout(new GridLayout(numLanes, 1));
 
         this.raceId = UUID.randomUUID().toString();
-        System.out.println(raceId);
 
         this.horsePanels = new ArrayList<>();
         for (Horse horse : horses) {

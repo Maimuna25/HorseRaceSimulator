@@ -7,6 +7,7 @@ import Part2.data.Constants;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +57,8 @@ public class HorseSettingsFrame extends JFrame {
             JPanel horseCustomPanel = new JPanel(new GridBagLayout());
             horseCustomPanel.setBackground(Constants.LIGHT_BLUE);
 
-            Horse horse = horses.get(col);
+            int finalCol = col;
+            Horse horse = horses.get(finalCol);
 
             JLabel laneNumberLabel = new JLabel("Lane Number: " + col);
             gridBagConstraints.gridx = 0;
@@ -101,7 +103,7 @@ public class HorseSettingsFrame extends JFrame {
             horseCustomPanel.add(hairColourLabel, gridBagConstraints);
 
             JComboBox<String> hairColourComboBox = new JComboBox<>(Constants.HAIR_COLOURS);
-            hairColourComboBox.setSelectedItem(horse.getCoatColour());
+            hairColourComboBox.setSelectedItem(horse.getHairColour());
             gridBagConstraints.gridx = 1;
             gridBagConstraints.gridy = 3;
             gridBagConstraints.insets = columnPairInset;
@@ -136,7 +138,52 @@ public class HorseSettingsFrame extends JFrame {
             horseCustomPanel.add(bridleColourComboBox, gridBagConstraints);
             bridleColourComboBoxes.add(bridleColourComboBox);
 
-            horseConfidence.add(horses.get(col).getHorseConfidence());
+            horseConfidence.add(horse.getHorseConfidence());
+
+            JLabel horsePreviewLabel = new JLabel("Preview:");
+            gridBagConstraints.gridx = 0;
+            gridBagConstraints.gridy = 6;
+            gridBagConstraints.gridwidth = 2;
+            gridBagConstraints.insets = new Insets(0, 0, 0, 0);
+            horseCustomPanel.add(horsePreviewLabel, gridBagConstraints);
+
+            JLabel horsePreview = new JLabel();
+            setImage(horsePreview, horse);
+            gridBagConstraints.gridx = 0;
+            gridBagConstraints.gridy = 7;
+            gridBagConstraints.gridwidth = 2;
+            horseCustomPanel.add(horsePreview, gridBagConstraints);
+
+            // add listeners here
+            horseNameField.addActionListener(_ -> horses.get(finalCol).setHorseName(horseNameField.getText()));
+            coatColourComboBox.addItemListener(e -> {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    Horse horseSelected = horses.get(finalCol);
+                    horseSelected.setCoatColour((String) coatColourComboBox.getSelectedItem());
+                    setImage(horsePreview, horseSelected);
+                }
+            });
+            hairColourComboBox.addItemListener(e -> {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    Horse horseSelected = horses.get(finalCol);
+                    horseSelected.setHairColour((String) hairColourComboBox.getSelectedItem());
+                    setImage(horsePreview, horseSelected);
+                }
+            });
+            saddleColourComboBox.addItemListener(e -> {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    Horse horseSelected = horses.get(finalCol);
+                    horseSelected.setSaddleColour((String) saddleColourComboBox.getSelectedItem());
+                    setImage(horsePreview, horseSelected);
+                }
+            });
+            bridleColourComboBox.addItemListener(e -> {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    Horse horseSelected = horses.get(finalCol);
+                    horseSelected.setBridleColour((String) bridleColourComboBox.getSelectedItem());
+                    setImage(horsePreview, horseSelected);
+                }
+            });
 
             add(horseCustomPanel);
         }
@@ -184,5 +231,10 @@ public class HorseSettingsFrame extends JFrame {
         }
 
         return newRunningHorses;
+    }
+
+    private void setImage(JLabel horsePreview, Horse horse) {
+        Image newImage = Toolkit.getDefaultToolkit().getImage(horse.getImagePath());
+        horsePreview.setIcon(new ImageIcon(newImage.getScaledInstance(150, 130, Image.SCALE_DEFAULT)));
     }
 }

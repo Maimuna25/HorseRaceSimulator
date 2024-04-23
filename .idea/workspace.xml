@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e50fac0f-dfe6-43f0-a15a-63ac35de99f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/Controller/MainFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Controller/MainFrameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/Model/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/Model/HorsePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part2/View/HorseRaceFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/HorseRaceFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/View/HorseSettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/View/HorseSettingsFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part2/data/raceStatistics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/data/raceStatistics.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,17 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.RaceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RaceTrackApp.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;gui-development&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.RaceTest.executor": "Run",
+    "Application.RaceTrackApp.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "gui-development",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jawad/Documents/MaimunaGitHub/HorseRaceSimulator/Part2/assets",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jawad\Documents\MaimunaGitHub\HorseRaceSimulator\Part2\assets" />
@@ -93,6 +101,13 @@
         <item itemvalue="Application.RaceTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

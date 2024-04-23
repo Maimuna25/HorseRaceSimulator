@@ -21,13 +21,13 @@ public class Horse {
         this.fallen = false;
     }
 
-    public Horse(String horseName, String coatColour, String hairColour) {
-        this(horseName, coatColour, hairColour, Constants.SADDLE_COLOUR[0], Constants.BRIDLE_COLOUR[0], Math.random());
+    public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour) {
+        this(horseName, coatColour, hairColour, saddleColour, bridleColour, Math.random());
     }
 
-    public Horse(String horseName, String coatColor, String hairColour, double randomConfidence) {
-        this(horseName,coatColor,hairColour);
-        this.horseConfidence = randomConfidence;
+
+    public Horse(String horseName, String coatColour, String hairColour) {
+        this(horseName, coatColour, hairColour, Constants.SADDLE_COLOUR[0], Constants.BRIDLE_COLOUR[0]);
     }
 
     public String getHorseName() {
@@ -72,6 +72,23 @@ public class Horse {
 
     public double getHorseConfidence() {
         return horseConfidence;
+    }
+
+    public String getImagePath() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Part2/assets/");
+
+        // .replaceAll() removes all whitespaces using Regular Expressions (regex)
+        sb.append("horse").append(coatColour.toLowerCase().replaceAll("\\s", "")).append("-");
+
+        // "None" for saddle and bridle colours needs to be changed to "no" for image file name.
+        sb.append(saddleColour.equals("None") ? "no" : saddleColour.toLowerCase()).append("saddle").append("-");
+        sb.append(bridleColour.equals("None") ? "no" : bridleColour.toLowerCase()).append("bridle").append("-");
+
+        // Added .png at the end since it is a PNG file.
+        sb.append(hairColour.toLowerCase()).append("hair.png");
+
+        return sb.toString();
     }
 
     public void fall() {
