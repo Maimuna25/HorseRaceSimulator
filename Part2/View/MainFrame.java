@@ -1,6 +1,7 @@
 package Part2.View;
 
 import Part2.Controller.MainFrameController;
+import Part2.data.Colours;
 import Part2.data.Constants;
 
 import javax.swing.*;
@@ -44,7 +45,7 @@ public class MainFrame extends JFrame {
 
     private JPanel createTopPanel() {
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.setBackground(Constants.LIGHT_BLUE);
+        topPanel.setBackground(Colours.LIGHT_BLUE);
 
         JLabel imageLabel = new JLabel();
         imageLabel.setIcon(new ImageIcon("Part2/assets/horseIcon.png"));
@@ -96,7 +97,7 @@ public class MainFrame extends JFrame {
 
     private JPanel createBottomPanel() {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        bottomPanel.setBackground(Constants.LIGHT_BLUE);
+        bottomPanel.setBackground(Colours.LIGHT_BLUE);
 
         // Action buttons
         statsButton = new JButton("View Statistics and Analytics");

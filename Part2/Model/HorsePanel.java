@@ -29,33 +29,44 @@ public class HorsePanel extends JPanel implements Runnable {
         this.finished = false;
         this.firstPlace = false;
         winner = null;
+        setLayout(new BorderLayout());
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // If the horse has fallen, rotate the image by 180 degrees clockwise
-        if (fallen) {
-            Graphics2D g2d = (Graphics2D) g.create();
-            g2d.rotate(Math.PI, position + 15, 41);
-            g2d.drawImage(Toolkit.getDefaultToolkit().getImage(horse.getImagePath()), position, 28, 30, 26, null);
-            g2d.dispose();
-        } else {
-            g.drawImage(Toolkit.getDefaultToolkit().getImage(horse.getImagePath()), position, 28, 30, 26, null);
+        int horseWidth = 30;
+        int horseHeight = 26;
+
+        // Calculate the actual position of the horse
+        int actualPosition = position;
+        if (actualPosition + horseWidth > trackLength) {
+            actualPosition = trackLength - horseWidth;
         }
 
-        g.drawString(horseName, position, 18);
+        // Draw the horse image at the calculated position
+        if (fallen) {
+            Graphics2D g2d = (Graphics2D) g.create();
+            g2d.rotate(Math.PI, actualPosition + 15, 41);
+            g2d.drawImage(Toolkit.getDefaultToolkit().getImage(horse.getImagePath()), actualPosition, 28, 30, 26, null);
+            g2d.dispose();
+        } else {
+            g.drawImage(Toolkit.getDefaultToolkit().getImage(horse.getImagePath()), actualPosition, 28, horseWidth, horseHeight, null);
+        }
 
+        // Draw the horse name and status text
+        int statusTextPosition = actualPosition + horseWidth + 18;
+        g.drawString(horseName, actualPosition, 18);
         String status;
         if (fallen) {
             status = ":Fallen";
         } else if (finished) {
-            status = ":Finished";
+            status = "";
         } else {
             status = ":Running";
         }
-        g.drawString(status, position + 50, 18);
+        g.drawString(status, statusTextPosition, 18);
     }
 
     @Override
@@ -71,10 +82,11 @@ public class HorsePanel extends JPanel implements Runnable {
                 }
             }
 
+            // Check if the horse has finished the race
             if (position >= trackLength && !fallen && !finished) {
                 finished = true;
                 if (winner == null) {
-                    winner = this;
+                    winner = this; // Set this horse as the winner
                     awardFirstPlace();
                 }
             }
@@ -86,7 +98,6 @@ public class HorsePanel extends JPanel implements Runnable {
                 e.printStackTrace();
             }
         }
-
 
         // Race finished or horse has fallen, update statistics
         int timeTaken = (int) ((System.currentTimeMillis() - startingTime) / 1000);
@@ -104,12 +115,10 @@ public class HorsePanel extends JPanel implements Runnable {
         if (firstPlace && winner == this) {
             String winnerName = horseName;
             new WinnerPopUpFrame(winnerName);
-
         }
     }
 
     public void awardFirstPlace() {
         firstPlace = true;
     }
-
 }
