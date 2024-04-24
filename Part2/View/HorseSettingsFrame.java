@@ -2,6 +2,7 @@ package Part2.View;
 
 import Part2.Model.Horse;
 import Part2.Model.Track;
+import Part2.data.Colours;
 import Part2.data.Constants;
 
 import javax.swing.*;
@@ -34,7 +35,7 @@ public class HorseSettingsFrame extends JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
 
-        getContentPane().setBackground(Constants.LIGHT_BLUE);
+        getContentPane().setBackground(Colours.LIGHT_BLUE);
 
         this.horseNameFields = new ArrayList<>();
         this.coatColourComboBoxes = new ArrayList<>();
@@ -58,7 +59,7 @@ public class HorseSettingsFrame extends JFrame {
 
         for (int col = 0; col < numLanes; col++) {
             JPanel horseCustomPanel = new JPanel(new GridBagLayout());
-            horseCustomPanel.setBackground(Constants.LIGHT_BLUE);
+            horseCustomPanel.setBackground(Colours.LIGHT_BLUE);
 
             int finalCol = col;
             Horse horse = horses.get(finalCol);
@@ -159,7 +160,6 @@ public class HorseSettingsFrame extends JFrame {
 
             // Add listeners to handle user interactions with various components
             //The setImage() method is called to update the preview image based on the changes
-            horseNameField.addActionListener(_ -> horses.get(finalCol).setHorseName(horseNameField.getText()));
             coatColourComboBox.addItemListener(e -> {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     Horse horseSelected = horses.get(finalCol);

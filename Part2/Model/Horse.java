@@ -9,7 +9,6 @@ public class Horse {
     private String saddleColour;
     private String bridleColour;
     private double horseConfidence;
-    private boolean fallen;
 
     public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour, double horseConfidence) {
         this.horseName = horseName;
@@ -18,11 +17,10 @@ public class Horse {
         this.saddleColour = saddleColour;
         this.bridleColour = bridleColour;
         this.horseConfidence = horseConfidence;
-        this.fallen = false;
     }
 
     public Horse(String horseName, String coatColour, String hairColour, String saddleColour, String bridleColour) {
-        this(horseName, coatColour, hairColour, saddleColour, bridleColour, Math.random());
+        this(horseName, coatColour, hairColour, saddleColour, bridleColour, Math.random() / 2 + 0.5);
     }
 
 
@@ -81,7 +79,8 @@ public class Horse {
         // .replaceAll() removes all whitespaces using Regular Expressions (regex)
         sb.append("horse").append(coatColour.toLowerCase().replaceAll("\\s", "")).append("-");
 
-        //Uses a ternary statement to quickly do a selection out of the two options
+        // "None" for saddle and bridle colours needs to be changed to "no" for image file name.
+        // Uses a ternary statement to quickly do a selection out of two options.
         sb.append(saddleColour.equals("None") ? "no" : saddleColour.toLowerCase()).append("saddle").append("-");
         sb.append(bridleColour.equals("None") ? "no" : bridleColour.toLowerCase()).append("bridle").append("-");
 
@@ -90,23 +89,6 @@ public class Horse {
 
         return sb.toString();
     }
-
-    public void fall() {
-        this.fallen = true;
-    }
-
-    public void setConfidence(double newConfidence) {
-        if (newConfidence >= 0 && newConfidence <= 1) {
-            this.horseConfidence = newConfidence;
-        } else {
-            System.out.println("Confidence rating must be between 0 and 1.");
-        }
-    }
-
-    public boolean hasFallen() {
-        return fallen;
-    }
-
 
     @Override
     public String toString() {

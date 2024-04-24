@@ -2,16 +2,15 @@ package Part2.View;
 
 import Part2.Model.RaceStatistics;
 import Part2.Model.RaceStatisticsEntry;
+import Part2.data.Colours;
 import Part2.data.Constants;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class RaceStatisticsFrame extends JFrame {
     public RaceStatisticsFrame(RaceStatistics statistics) {
@@ -19,7 +18,7 @@ public class RaceStatisticsFrame extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        getContentPane().setBackground(Constants.LIGHT_BLUE);
+        getContentPane().setBackground(Colours.LIGHT_BLUE);
 
         setLayout(new GridBagLayout());
 
@@ -55,7 +54,7 @@ public class RaceStatisticsFrame extends JFrame {
 
         JTextArea horseStatsTextArea = new JTextArea(4, 1);
         horseStatsTextArea.setFont(horseStatsTextArea.getFont().deriveFont(18f));
-        horseStatsTextArea.setBackground(Constants.LIGHT_BLUE);
+        horseStatsTextArea.setBackground(Colours.LIGHT_BLUE);
         horseStatsTextArea.setEditable(false);
         horseStatsTextArea.setText(getHorseInfo(statistics, (String) horseNameComboBox.getSelectedItem()));
         gridBagConstraints.gridx = 1;
@@ -83,16 +82,16 @@ public class RaceStatisticsFrame extends JFrame {
     private String getHorseInfo(RaceStatistics raceStatistics, String horseName) {
         List<RaceStatisticsEntry> horseEntries = raceStatistics.getAllEntries()
                 .stream()
-                .filter(h -> h.getHorseName().equals(horseName)) // filter() removes any Horse object that doesn't match the condition given.
+                .filter(h -> h.getHorseName().equals(horseName))   // filter() removes any Horse object that doesn't match the condition given
                 .toList();
 
-        //.map() function extracts the distance travelled for each horse
-        //.reduce() function sums up distances, starting with zero
-        int totalDistance = horseEntries.stream().map(RaceStatisticsEntry::getDistanceTravelled).reduce(0, Integer::sum);
+        // map() calls the getDistanceTravelled() method of RaceStatisticsEntry and sums up the values using reduce()
+        int totalDistance = horseEntries.stream().map(RaceStatisticsEntry::getDistanceTravelled).reduce(0, Integer::max);
 
-        int wins = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasWon).count();  // Filter and count horses that have won
-        int loss = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasLost).count(); // Filter and count horses that have lost
-        int falls = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasFallen).count(); // Filter and count horses that have fallen
+        // filter() keeps all the RaceStatisticsEntry where the method called returns true and count() works out the size of values left.
+        int wins = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasWon).count();
+        int loss = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasLost).count();
+        int falls = (int) horseEntries.stream().filter(RaceStatisticsEntry::hasFallen).count();
 
         StringBuilder sb = new StringBuilder();
         sb.append("Horse Selected: ").append(horseName).append("\n");

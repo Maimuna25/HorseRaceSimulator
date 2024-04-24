@@ -1,6 +1,7 @@
 package Part2.View;
 
 import Part2.Model.Track;
+import Part2.data.Colours;
 import Part2.data.Constants;
 import Part2.utilities.IntRange;
 
@@ -18,7 +19,7 @@ public class TrackSettingsFrame extends JFrame {
         setSize(400, 300);
         setLocationRelativeTo(null);
 
-        getContentPane().setBackground(Constants.LIGHT_BLUE);
+        getContentPane().setBackground(Colours.LIGHT_BLUE);
 
         JLabel numHorsesLabel = new JLabel("Number of Tracks: ");
         JLabel trackLengthLabel = new JLabel("Track Length:");
@@ -28,7 +29,7 @@ public class TrackSettingsFrame extends JFrame {
         numLanesField.setSelectedItem(trackSettings.getNumLanes());
 
         trackLengthSlider = new JSlider(JSlider.HORIZONTAL, 100, 2000, trackSettings.getTrackLength());
-        trackLengthSlider.setBackground(Constants.LIGHT_BLUE);
+        trackLengthSlider.setBackground(Colours.LIGHT_BLUE);
 
         JLabel trackLengthValueLabel = new JLabel("Track Length: " + trackLengthSlider.getValue() + " meters");
         applyButton = new JButton("Apply Changes");
