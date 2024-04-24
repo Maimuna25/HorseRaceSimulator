@@ -32,11 +32,9 @@ public class MainFrame extends JFrame {
         topPanel = createTopPanel();
         add(topPanel, BorderLayout.NORTH);
 
-        // Center panel with background image and buttons
         centerPanel = createCenterPanel();
         add(centerPanel, BorderLayout.CENTER);
 
-        // Bottom panel with action buttons
         bottomPanel = createBottomPanel();
         add(bottomPanel, BorderLayout.SOUTH);
 
@@ -49,12 +47,10 @@ public class MainFrame extends JFrame {
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.setBackground(Colours.LIGHT_BLUE);
 
-        // Image panel
         JLabel imageLabel = new JLabel();
         imageLabel.setIcon(new ImageIcon("Part2/assets/horseIcon.png"));
         topPanel.add(imageLabel, BorderLayout.WEST);
 
-        // Title label
         JLabel titleLabel = new JLabel("Welcome to Horse Racing Game");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 100, 0, 0)); // Add left padding
@@ -66,7 +62,7 @@ public class MainFrame extends JFrame {
     private JPanel createCenterPanel() {
         ImagePanel centerPanel = new ImagePanel("Part2/assets/raceTrack.jpg");
         centerPanel.setLayout(new GridBagLayout());
-        centerPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0)); // Add padding
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         centerPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         GridBagConstraints gridBagConstraints = new GridBagConstraints();

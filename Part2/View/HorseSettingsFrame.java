@@ -27,7 +27,7 @@ public class HorseSettingsFrame extends JFrame {
     public HorseSettingsFrame(Track trackSettings, List<Horse> horses) {
         this.numLanes = trackSettings.getNumLanes();
 
-        setTitle("Customize Horses");
+        setTitle("Customise Horses");
 
         int numHorses = trackSettings.getNumLanes();
         int windowHeight = numHorses <= 5 ? 430 : 780;
@@ -158,7 +158,8 @@ public class HorseSettingsFrame extends JFrame {
             gridBagConstraints.gridwidth = 2;
             horseCustomPanel.add(horsePreview, gridBagConstraints);
 
-            // add listeners here
+            // Add listeners to handle user interactions with various components
+            //The setImage() method is called to update the preview image based on the changes
             coatColourComboBox.addItemListener(e -> {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     Horse horseSelected = horses.get(finalCol);
@@ -236,6 +237,7 @@ public class HorseSettingsFrame extends JFrame {
         return newRunningHorses;
     }
 
+    // Load and scale the image to fit within the JLabel component
     private void setImage(JLabel horsePreview, Horse horse) {
         Image newImage = Toolkit.getDefaultToolkit().getImage(horse.getImagePath());
         horsePreview.setIcon(new ImageIcon(newImage.getScaledInstance(150, 130, Image.SCALE_DEFAULT)));

@@ -19,8 +19,8 @@ public class HorseRaceFrame extends JFrame {
     public HorseRaceFrame(Track track, List<Horse> horses, RaceStatistics raceStatistics) {
         int numLanes = track.getNumLanes();
         int trackLength = track.getTrackLength();
-        int laneWidth = 108; // Width per lane
-        int frameWidth = laneWidth + trackLength; // Calculate the initial frame width
+        int laneWidth = 108;
+        int frameWidth = laneWidth + trackLength;
 
         instance = this;
 
