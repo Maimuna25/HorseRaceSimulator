@@ -1,5 +1,7 @@
 package Part2.View;
 
+import Part2.data.Colours;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,8 +13,7 @@ public class WinnerPopUpFrame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Color customGreen = new Color(144, 238, 144);
-        getContentPane().setBackground(customGreen);
+        getContentPane().setBackground(Colours.LIGHT_GREEN);
 
         JLabel winnerLabel = new JLabel("The Winner is " + winnerName + "!");
         winnerLabel.setHorizontalAlignment(SwingConstants.CENTER);

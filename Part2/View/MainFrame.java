@@ -1,6 +1,7 @@
 package Part2.View;
 
 import Part2.Controller.MainFrameController;
+import Part2.data.Colours;
 import Part2.data.Constants;
 
 import javax.swing.*;
@@ -46,7 +47,7 @@ public class MainFrame extends JFrame {
 
     private JPanel createTopPanel() {
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.setBackground(Constants.LIGHT_BLUE);
+        topPanel.setBackground(Colours.LIGHT_BLUE);
 
         // Image panel
         JLabel imageLabel = new JLabel();
@@ -100,7 +101,7 @@ public class MainFrame extends JFrame {
 
     private JPanel createBottomPanel() {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        bottomPanel.setBackground(Constants.LIGHT_BLUE);
+        bottomPanel.setBackground(Colours.LIGHT_BLUE);
 
         // Action buttons
         statsButton = new JButton("View Statistics and Analytics");
