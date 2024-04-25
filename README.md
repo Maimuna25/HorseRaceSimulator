@@ -96,3 +96,4 @@ Go to your terminal
    java Part2.RaceTrackApp
 
 
+ ***(For best results run though IntelliJ)***
