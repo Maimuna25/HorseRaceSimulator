@@ -50,15 +50,17 @@ This module includes the following key features:
 1. Customisable Track Design
 2. Customisable Horses
 3. Statistics and Analytics
+4. Virtual Betting System
 
 ### Instructions on how to play:
 
-Upon launching the GUI, users will be presented with four buttons on the homepage:
+Upon launching the GUI, users will be presented with five buttons on the homepage:
 
 1. Customise Track: Before starting the race, users can design their own racing track by specifying the number of lanes and setting the lengths of the tracks for each horse. Whether you prefer a straightforward sprint or a more challenging course, the choice is yours!
 2. Customise Horses: Personalise your horses by selecting various options such as coat colour, saddle colour, bridle colour, and more. Experiment with different combinations to create unique-looking horses that reflect your style and preferences. Preview how your horses will appear on the track before proceeding to the race.
-3. Start Race: Once you've customised the track and horses to your liking, click the "Start Race" button to begin the race. Sit back, relax, and watch as the horses gallop towards the finish line. Feel the excitement as they compete for victory, and cheer on your favourites as they strive to cross the finish line first.
-4. View Statistics and Analytics: After the race concludes, click on the "View Statistics and Analytics" button to access detailed statistics and analytics for each horse. Analyse their performance metrics such as average time, falls, and distance traveled to gain insights into their racing abilities and identify areas for improvement.
+3. Enter Virtual Betting System: Place your bets! Users can bet on a horse they've chosen to race in the game in exchange for virtual credits. Select the horse you believe will win the race and enter the amount of virtual credits you want to bet. If your selected horse wins, you'll earn virtual credits!
+4. Start Race: Once you've customised the track and horses to your liking, click the "Start Race" button to begin the race. Sit back, relax, and watch as the horses gallop towards the finish line. Feel the excitement as they compete for victory, and cheer on your favourites as they strive to cross the finish line first.
+5. View Statistics and Analytics: After the race concludes, click on the "View Statistics and Analytics" button to access detailed statistics and analytics for each horse. Analyse their performance metrics such as average time, falls, and distance traveled to gain insights into their racing abilities and identify areas for improvement.
 
  With more customisation options and the ability to race with additional horses, the graphical version of the Horse Racing Simulator offers an enhanced gaming experience that is both engaging and entertaining. So, gather your friends, customise your horses, and get ready for an exhilarating race to the finish line!
 
