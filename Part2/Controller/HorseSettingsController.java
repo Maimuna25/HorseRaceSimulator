@@ -12,9 +12,14 @@ public class HorseSettingsController {
         this.horseSettingsFrame = new HorseSettingsFrame(parentController.getTrackSettings(), parentController.getHorses());
 
         this.horseSettingsFrame.onCustomiseButtonClicked(_ -> {
+
             parentController.setHorses(getHorses());
             toggleFrameVisible(false);
         });
+    }
+
+    public List<String> getHorseNames() {
+        return horseSettingsFrame.getHorseNames();
     }
 
     public List<Horse> getHorses() {

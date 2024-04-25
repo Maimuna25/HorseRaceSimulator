@@ -22,6 +22,7 @@ public class HorseSettingsFrame extends JFrame {
     private List<JComboBox<String>> bridleColourComboBoxes;
     private List<Double> horseConfidence;
     private JButton customiseButton;
+    private List<Horse> horses;
 
 
     public HorseSettingsFrame(Track trackSettings, List<Horse> horses) {
@@ -218,6 +219,14 @@ public class HorseSettingsFrame extends JFrame {
 
     public String getBridleColour(int laneNum) {
         return (String) bridleColourComboBoxes.get(laneNum).getSelectedItem();
+    }
+
+    public List<String> getHorseNames() {
+        List<String> names = new ArrayList<>();
+        for (Horse horse : horses) {
+            names.add(horse.getHorseName());
+        }
+        return names;
     }
 
     public List<Horse> getHorses() {

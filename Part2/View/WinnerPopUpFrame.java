@@ -1,5 +1,6 @@
 package Part2.View;
 
+import Part2.Controller.BettingWindowController;
 import Part2.data.Colours;
 
 import javax.swing.*;
