@@ -72,13 +72,18 @@ To run the textual version of the simulator, execute the following command on yo
 
 1. Clone the repository:
    
-   git clone https://github.com/Maimuna25/HorseRaceSimulator.git
+   **git clone https://github.com/Maimuna25/HorseRaceSimulator.git**
 3. Compile and Run:
    
-   cd HorseRaceSimulator
+   **cd HorseRaceSimulator**
+   
+   **cd Part1**
+   
+   **javac Race.java**
+   
 5. Run the textual version by typing:
    
-   java Part1.RaceTest
+   **java RaceTest**
 
 ### Part 2
 
@@ -87,15 +92,18 @@ Go to your terminal
 
 1. Clone the Repository:
    
-   git clone https://github.com/Maimuna25/HorseRaceSimulator.git
+   **git clone https://github.com/Maimuna25/HorseRaceSimulator.git**
 3. Compile and Run: Compile and run the GUI module to launch the application.
 
-   cd HorseRaceSimulator
+   **cd HorseRaceSimulator**
 
-   javac *.java
+   **cd Part2**
+   
+   **javac *.java**
+   
 5. Run the GUI application by typing:
    
-   java Part2.RaceTrackApp
+   **java RaceTrackApp**
 
 
  ***(For best results run though IntelliJ)***
