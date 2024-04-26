@@ -35,6 +35,7 @@ public class Race {
      *
      * @param theHorse   the horse to be added to the race
      * @param laneNumber the lane that the horse will be added to
+     * @throws IllegalArgumentException if the lane number is invalid
      */
     public void addHorse(Horse theHorse, int laneNumber) {
         if (laneNumber == 1) {
@@ -44,7 +45,7 @@ public class Race {
         } else if (laneNumber == 3) {
             lane3Horse = theHorse;
         } else {
-            System.out.println("Cannot add horse to lane " + laneNumber + " because there is no such lane");
+            throw new IllegalArgumentException("Invalid lane number: " + laneNumber);
         }
     }
 
