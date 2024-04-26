@@ -2,8 +2,7 @@ package Part2.Controller;
 
 import Part2.Model.Horse;
 import Part2.View.BettingSettingsFrame;
-import Part2.data.Colours;
-import Part2.data.Constants;
+
 
 import javax.swing.*;
 import java.util.List;
@@ -23,9 +22,5 @@ public class BettingWindowController {
 
     public static void toggleFrameVisibility(boolean makeVisible) {
         bettingWindow.setVisible(makeVisible);
-    }
-
-    public void showBettingWindow() {
-        bettingWindow.setVisible(true);
     }
 }

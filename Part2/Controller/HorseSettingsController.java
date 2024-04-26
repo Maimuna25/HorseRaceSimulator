@@ -18,10 +18,6 @@ public class HorseSettingsController {
         });
     }
 
-    public List<String> getHorseNames() {
-        return horseSettingsFrame.getHorseNames();
-    }
-
     public List<Horse> getHorses() {
         return horseSettingsFrame.getHorses();
     }

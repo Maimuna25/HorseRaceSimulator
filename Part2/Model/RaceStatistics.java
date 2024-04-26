@@ -63,6 +63,7 @@ public class RaceStatistics {
         return headers;
     }
 
+    //Retrieves the data stored in the race statistics entries and organises it into a 2D array.
     public String[][] getData() {
         String[][] data = new String[raceStatisticsEntries.size()][headers.length];
         for (int i = 0; i < raceStatisticsEntries.size(); i++) {

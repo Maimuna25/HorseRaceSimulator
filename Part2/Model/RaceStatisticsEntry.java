@@ -51,6 +51,7 @@ public class RaceStatisticsEntry {
         return fallen;
     }
 
+    // Retrieves the values of the race statistics entry attributes and stores them in a String array.
     public String[] values() {
         return new String[] {
                 raceId,

@@ -3,7 +3,6 @@ package Part2.View;
 import Part2.Model.RaceStatistics;
 import Part2.Model.RaceStatisticsEntry;
 import Part2.data.Colours;
-import Part2.data.Constants;
 
 import javax.swing.*;
 import java.awt.*;

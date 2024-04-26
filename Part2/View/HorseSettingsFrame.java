@@ -221,14 +221,6 @@ public class HorseSettingsFrame extends JFrame {
         return (String) bridleColourComboBoxes.get(laneNum).getSelectedItem();
     }
 
-    public List<String> getHorseNames() {
-        List<String> names = new ArrayList<>();
-        for (Horse horse : horses) {
-            names.add(horse.getHorseName());
-        }
-        return names;
-    }
-
     public List<Horse> getHorses() {
         List<Horse> newRunningHorses = new ArrayList<>();
 
