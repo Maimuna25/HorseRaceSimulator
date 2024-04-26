@@ -99,7 +99,7 @@ Go to your terminal
 
    **cd Part2**
    
-   **javac *.java**
+   javac *.java
    
 5. Run the GUI application by typing:
    
